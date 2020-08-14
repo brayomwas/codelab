@@ -10,3 +10,42 @@ img {
   height: 100%;
   width: 100%;
 }
+
+.nav-bg {
+  background-color: rgba(#3366cc, 0.25);
+}
+.sidebar {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  left: 0;
+  background: #01163B;
+
+}
+/* .card {
+  max-height: 350px!important;
+} */
+.nav {
+  position: relative;
+  margin: 0 15%;
+  text-align: right;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 500;
+}
+
+.nav ul {
+  list-style: none;
+  
+}
+
+.course-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.course-cards * {
+  flex: 1 0 33%;
+}

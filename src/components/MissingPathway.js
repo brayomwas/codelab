@@ -6,8 +6,8 @@ import ButtonText from './ButtonText'
 export default function MissingPathway(props) {
     return (
         <div className="row">
-            <div className="col s12 m5 l3">
-                <div className="card-panel white">
+            <div className="col l11">
+                <div className="card-panel white hoverable">
                     <CardHeading text="Missing Pathway Guide? Suggest a Career Pathway" />
                     <div className="row">
                         <div className="input-field col s12">

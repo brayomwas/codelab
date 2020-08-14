@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Machine Learning",
+        "instructors": ["Cyril", "Cyril"],
+        "price": "100",
+        "enrolled": "600",
+        "reviews": {
+            "name": "Brian",
+            "description": "Nice course",
+            "date": "13/08/2020"
+        },
+        "rating": "4.5",
+        "platform": "Udemy"
+    },
+    {
+        "title": "React",
+        "instructors": ["Brian", "Cabral"],
+        "price": "100",
+        "enrolled": "450",
+        "reviews": {
+            "name": "Mwangi",
+            "description": "Very interesting course",
+            "date": "10/10/2020"
+        },
+        "rating": "5",
+        "platform": "Coursera"
+    },
+    {
+        "title": "Web Development",
+        "instructors": ["Brian", "Cabral"],
+        "price": "90",
+        "enrolled": "1000",
+        "reviews": {
+            "name": "Reviewer",
+            "description": "I learned a lot",
+            "date": "01/01/2020"
+        },
+        "rating": "4",
+        "platform": "Codecademy"
+    }
+]
