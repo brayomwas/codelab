@@ -1,60 +1,68 @@
-import React from 'react';
-import PathwayRow from '../components/PathwayRow'
-import CourseCard from '../components/CourseCard'
-import MissingPathwayCard from '../components/MissingPathway'
-import DocumentHeading from '../components/DocumentHeading'
-import data from '../data/Details.json'
+import React from "react";
+import { Grid, Typography } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles'
+import PathwayCard from "../components/PathwayCard";
+import SideBar from "../components/SideBar";
+import DocumentHeading from "../components/DocumentHeading";
+import DocumentSubheading from "../components/DocumentSubheadng";
+import pathways from "../data/pathways.json";
+
+const useStyles = makeStyles({
+    mt70: {
+        marginTop: '50px'
+    }
+});
+const allPathways = pathways.map((pathway) => {
+  let pathwayObj = { ...pathway };
+  return pathwayObj;
+});
+
+console.log(allPathways[0]);
+
+const rows = allPathways.map((pathway) => (
+  <Grid item xs={6} sm={4}>
+    {/* <Typography>{<DocumentSubheading text="Data Science" />}</Typography> */}
+    <PathwayCard title={pathway.title} />
+  </Grid>
+));
 export default function LearningPathways() {
-    const courseDetails = data.map(course => {
-        return (
-            {title: course.title,
-             instructors: course.instructors,
-             price: course.price,
-             enrolled: course.enrolled,
-             instructors: course.instructors,
-             reviews: course.reviews,
-             rating: course.rating,
-             platform: course.platform}
-        )
-    });
-    const rows = courseDetails.map(course => {
-        return (
-            <CourseCard className="course" heading={course.title} description={course.reviews.description} enrolled={course.enrolled} rating={course.rating} instructors={course.instructors} />
-        )
-    })
-    
-    return (
-        <div className="row">
-            <div className="col s12">
-                <main>
-                    <div className="row">
-                        <div className="col l3">
-                            <aside className="sidebar">
-                                <nav className="transparent">
-                                 <ul>
-                                    <li>Home</li>
-                                    
-                                 </ul>
-                                </nav>
-                            </aside>
-                        </div>
-                        <div className="col l9">
-                            <DocumentHeading text="Career Pathway Guides"/>
-                            <p>View curricular guides to your learning pathway, discover on-demand skills from the job market and get recommendations to the best courses on Udemy, Coursera, edX etc</p>
-                            <section className="course-cards">
-                            
-                                 {rows}
-                                <MissingPathwayCard />
-                                <MissingPathwayCard />
-                                <MissingPathwayCard />
-                            </section>
-                        </div>
-                    </div>
-                    
-                   
-                </main>
-            </div>
-        </div>
-        
-    )
+    const classes = useStyles();
+
+  return (
+    <Grid container spacing={3}>
+      <Grid item>
+        <SideBar />
+      </Grid>
+      <Grid item container xs direction="column">
+        <Grid item xs>
+          {/* Pathway Name */}
+          <Typography>
+            {<DocumentHeading text="Python Career Pathways" />}
+          </Typography>
+        </Grid>
+        <Grid item container xs spacing={3} className={classes.mt70}>
+          {/* Pathway cards */}
+          {rows}
+          {/* <Grid item xs={6} sm={4}>
+            <Typography>
+              {<DocumentSubheading text="Data Science" />}
+            </Typography>
+            <PathwayCard />
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <PathwayCard />
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <PathwayCard />
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <PathwayCard />
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <PathwayCard />
+          </Grid> */}
+        </Grid>
+      </Grid>
+    </Grid>
+  );
 }

@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-    max-width: 160px;
+    width: 200px;
     height: 40px;
-    background-color: transparent;
-    border: none;
-    outline: 1px solid red;
+    background-color: #fafafa;
+    border: 1px solid #3366cc;
+    color: #3366cc;
+    border-radius: 10px;
 `;
 
 export default function Button(props) {
-return <StyledButton>{props.text}</StyledButton>
+    return <StyledButton className="waves-effect">{props.text}</StyledButton>
 }

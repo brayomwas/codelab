@@ -1,24 +1,28 @@
 import React from 'react';
-import Logo from '../images/javascript.svg'
+import { Button, Typography } from '@material-ui/core'
+import Udemy from '../images/Udemy Banner.png'
+import Coursera from '../images/Cousera Banner.jpg'
 import CardHeading from './CardHeading'
+
 export default function CourseCard(props) {
     return (
         <div className="row">
             <div className="col l11">
                 <div className="card hoverable">
                     <div className="card-image">
-                        <img src={Logo} alt="Logo" />
+                        <img src={props.platform === 'Udemy' ? Udemy : Coursera} alt="Logo" />
                         <span className="card-title"></span>
                     </div>
                     <div className="card-content center">
                         <CardHeading text={props.heading} />
-                            <p>{props.description}</p>
-                            <p>Enrolled: {props.enrolled}</p>
-                            <p>Rating: {props.rating}</p>
-                            <p>Instructors: {props.instructors}</p>
+                            <p>{props.title}</p>
+                            <p>{props.platform}</p>
+                            
                     </div>
                     <div className="card-action center">
-                        <a href="">Learn More</a>
+                        <Button variant='outlined' color='primary' href={props.link}>
+                            <Typography color='primary'>Get Started</Typography>
+                        </Button>
                     </div>
                 </div>
             </div>

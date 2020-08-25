@@ -6,6 +6,7 @@ const StyledHeading = styled.h1`
     font-family: 'Nunito', sans-serif;
     font-size: 60px;
     font-weight: 300;
+    color: #011638;
 `;
 
 
