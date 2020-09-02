@@ -1,27 +1,34 @@
 import React from 'react';
-import DocumentHeading from './components/DocumentHeading';
-import CardHeading from './components/CardHeading'
-import ButtonText from './components/ButtonText'
-import Button from './components/Button'
-import CourseCard from './components/CourseCard'
-import StepCard from './components/StepCard'
-import MissingPathway from './components/MissingPathway'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Courses from './pages/Courses';
+import LearningPathways from './pages/LearningPathways';
 import 'materialize-css/dist/css/materialize.min.css'
 import Nav from './components/Nav'
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <Nav />
-      {/* <DocumentHeading text="Learning Pathways"/>
-      <CardHeading text="Heading" />
-      <ButtonText text="Button" />
-      <Button text="view all course docs" />
-      <CourseCard />
-      <StepCard />
-      <MissingPathway /> */}
-    </div>
+    <Router>
+      <>
+      <div>
+        <Nav />
+  
+      </div>
+      <Switch>
+        <Route path="/courses">
+          <Courses />
+        </Route>
+        {/* <Route exact path="/pathways/:pathway" render={(props) =>    <IndividualPathway {...props} pathway='Machine' />} /> */}
+
+         <Route 
+            path='/pathways' 
+            render={(props) => <LearningPathways {...props}/>} 
+          />
+          
+      </Switch>
+      </>
+    
+    </Router>
   );
 }
 

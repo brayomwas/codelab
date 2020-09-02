@@ -1,15 +1,42 @@
 import React from 'react';
-import styled from 'styled-components';
+import { MemoryRouter as Router } from 'react-router';
+import { Link as RouterLink, withRouter, Redirect } from 'react-router-dom';
+import { Button, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+// import history from '../history'
 
-const StyledButton = styled.button`
-    width: 200px;
-    height: 40px;
-    background-color: #fafafa;
-    border: 1px solid #3366cc;
-    color: #3366cc;
-    border-radius: 10px;
-`;
+const LinkBehavior = React.forwardRef((props, ref) => (
+    <RouterLink ref={ref}  { ...props} />
+));
 
-export default function Button(props) {
-    return <StyledButton className="waves-effect">{props.text}</StyledButton>
+const useStyles = makeStyles({
+    button: {
+        display: 'flex',
+        justifyContent: 'center'
+    },
+})
+
+function ButtonRouter(props) {
+    const classes = useStyles();
+    return (
+        <Router>
+            <div>
+                
+                    <Button
+                         variant='outlined'
+                         color='primary' 
+                         className={classes.button} 
+                         component={LinkBehavior} 
+                         to={`${props.match.url}/${props.text}`}
+                         onClick={() => props.history.push(`${props.match.url}/${props.text}`)}>
+                        <Typography >Explore</Typography>
+                    </Button> 
+                
+                
+                <br />
+            </div>
+        </Router>
+    )
 }
+
+export default withRouter(ButtonRouter)

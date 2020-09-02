@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Link } from 'react-router-dom';
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles'
 import PathwayCard from "../components/PathwayCard";
@@ -6,27 +7,34 @@ import SideBar from "../components/SideBar";
 import DocumentHeading from "../components/DocumentHeading";
 import DocumentSubheading from "../components/DocumentSubheadng";
 import pathways from "../data/pathways.json";
+import IndividualPathway from "./IndivudualPathway";
 
 const useStyles = makeStyles({
     mt70: {
         marginTop: '50px'
     }
 });
-const allPathways = pathways.map((pathway) => {
-  let pathwayObj = { ...pathway };
-  return pathwayObj;
-});
 
-console.log(allPathways[0]);
 
-const rows = allPathways.map((pathway) => (
-  <Grid item xs={6} sm={4}>
-    {/* <Typography>{<DocumentSubheading text="Data Science" />}</Typography> */}
-    <PathwayCard title={pathway.title} />
-  </Grid>
-));
-export default function LearningPathways() {
+function LearningPathways({ match }) {
     const classes = useStyles();
+
+    const allPathways = pathways.map((pathway) => {
+      let pathwayObj = { ...pathway };
+      return pathwayObj;
+    });
+    
+    console.log(allPathways[0]);
+    console.log(match)
+    const rows = allPathways.map((pathway) => (
+      <Grid item xs={6} sm={4}>
+        <Link to={`${match.url}/${pathway.pathway}`}>
+           <PathwayCard title={pathway.pathway} />
+        </Link>
+        
+      </Grid>
+    ));
+    
 
   return (
     <Grid container spacing={3}>
@@ -43,26 +51,17 @@ export default function LearningPathways() {
         <Grid item container xs spacing={3} className={classes.mt70}>
           {/* Pathway cards */}
           {rows}
-          {/* <Grid item xs={6} sm={4}>
-            <Typography>
-              {<DocumentSubheading text="Data Science" />}
-            </Typography>
-            <PathwayCard />
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <PathwayCard />
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <PathwayCard />
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <PathwayCard />
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <PathwayCard />
-          </Grid> */}
         </Grid>
       </Grid>
+      
+      <Route 
+          exact
+          path={`${match.url}/:individualPathway`}
+          render={(props) => <IndividualPathway  data={pathways} {...props}/>}
+      />
+
     </Grid>
   );
 }
+
+export default LearningPathways;

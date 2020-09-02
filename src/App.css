@@ -11,10 +11,10 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Nunito', sans-serif;
 }
-/* img {
+img {
   height: 40vh;
-  width: 100%;
-} */
+  width: 40vw;
+}
 .app-bar {
   z-index: 1250 !important;
 }

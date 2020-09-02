@@ -1,6 +1,6 @@
 [
     {
-        "title": "Data Science",
+        "pathway": "Data Science",
         "data": [
             {
                 "step": "1",
@@ -55,7 +55,7 @@
         ]
     },
     {
-        "title": "General Programming",
+        "pathway": "General Programming",
         "data": [
             {
                 "step": "1",
@@ -110,7 +110,7 @@
         ]
     },
     {
-        "title": "Machine Learning & AI",
+        "pathway": "Machine Learning & AI",
         "data": [
             {
                 "step": "1",
@@ -165,7 +165,7 @@
         ]
     },
     {
-        "title": "Web Development",
+        "pathway": "Web Development",
         "data": [
             {
                 "step": "1",

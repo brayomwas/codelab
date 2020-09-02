@@ -12,38 +12,93 @@ import SideBar from '../components/SideBar'
 import StepAccordion from '../components/StepAccordion'
 import pathways from '../data/pathways.json'
 
+// create state for holding component data
+// contents of state: page title(string), accordion details(object)
+
 const useStyles = makeStyles({
-    image: {
-        height: 80,
-        width: '100%',
-        
+    step: {
+        marginTop: '500px'
+    },
+    heading: {
+        color: '#000000'
+    },
+    view: {
+        marginLeft: 50,
+        marginRight: 50
     }
 })
+
 export default function IndividualPathway(props) {
+    
+    // const [ title, setTitle ] = useState('');
+    // const [ accordionDetails, setAccordionDetails ] = useState({});
+    const individualPathway = props.data.find(pathway => pathway.pathway === props.match.params.individualPathway);
+    console.log(individualPathway.data);
     const classes = useStyles();
+    //all pathways data
+    // const props.data = pathways.map((pathway) => {
+    //     return {
+    //         pathway: pathway.pathway,
+    //         step: pathway.data.map(step => step.pathwayModule),
+    //         description: pathway.data.map(step => step.description)
+    //     }
+    // });
+    
+    
+    let accordion = [];
+
+    //render Accordion according to the title of the card
+
+    // for ( let i = 0; i < props.data.length; i++) {
+    //     for ( let j = 0; j < 10; j ++) {
+    //         // console.log(props.data[i].step[j]);
+    //         // console.log(props.data[i].description[j]);
+    //         // console.log(props.data[i].pathway)
+    //         if (props.data[i].pathway === 'Data Science'){
+    //             accordion.push(<StepAccordion 
+    //                 summary={props.data[i].step[j]}
+    //                 description={props.data[i].description[j]}
+    //                 step={j + 1}
+    //                 title='A' />)
+    //         }
+                
+    //     }
+        
+    // }
+    for (let i = 0; i < individualPathway.data.length; i++) {
+        accordion.push(<StepAccordion
+            summary={individualPathway.data[i].pathwayModule}
+            description={individualPathway.data[i].description}
+            step={i + 1}
+            title={'A'}
+            />)
+    }
+
     return(
         <Grid container spacing={3}>
             <Grid item>
                 <SideBar />
             </Grid>
-            <Grid item container xs direction='column'>
+            <Grid item container xs direction='column' className={classes.view}>
                 <Grid item>
                     <Typography>
-                        {<DocumentHeading text='Data Science' />}
+                        {<DocumentHeading text={individualPathway.pathway} />}
                     </Typography>
                 </Grid>
                 <Grid item>
                     <PathwayNav />
                 </Grid>
+                <Grid item xs>
+                    <Image src={MLImage} imageStyle={{height: '60vh'}} />
+                    {/* <img src={MLImage} alt='Image' /> */}
+                </Grid>
                 <Grid item xs >
-                    <Image src={MLImage} className={classes.image} />
+                   <Subheading text='Steps' />
+                    
                 </Grid>
-                <Grid item mt={1}>
-                    Pathway Overview
-                </Grid>
-                <Grid item>
-                    Steps accordion
-                    <StepAccordion />
+                <Grid item xs={12} sm={10} className={classes.step}>
+                    {/* Steps accordion */}
+                    {accordion}
                 </Grid>
             </Grid>
         </Grid>
