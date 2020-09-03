@@ -6,6 +6,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 import Layout from './components/Layout'
 import './App.css';
 import HomePage from './pages/HomePage';
+import Blog from './pages/Blog';
 import IndividualPathway from './pages/IndivudualPathway';
 // import pathways from './data/pathways.json'
 
@@ -23,6 +24,12 @@ function App() {
         <Route path="/courses">
           <Layout>
              <Courses />
+         </Layout>
+        </Route>
+
+        <Route path="/blog">
+          <Layout>
+             <Blog />
          </Layout>
         </Route>
 
