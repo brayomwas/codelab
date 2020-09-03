@@ -1,5 +1,4 @@
 import React from 'react';
-import PathwayRow from '../components/PathwayRow'
 import CourseCard from '../components/CourseCard'
 import MissingPathwayCard from '../components/MissingPathway'
 import DocumentHeading from '../components/DocumentHeading'
@@ -50,7 +49,7 @@ export default function LearningPathways() {
             <div className="col s12">
                 <main>
                     <div className="row">
-                        <div className="col l3">
+                        {/* <div className="col l3">
                             <aside className="sidebar">
                                 <nav className="transparent">
                                  <ul>
@@ -59,7 +58,7 @@ export default function LearningPathways() {
                                  </ul>
                                 </nav>
                             </aside>
-                        </div>
+                        </div> */}
                         <div className="col l9">
                             <DocumentHeading text="Courses"/>
                             <p>View curricular guides to your learning pathway, discover on-demand skills from the job market and get recommendations to the best courses on Udemy, Coursera, edX etc</p>
@@ -77,6 +76,5 @@ export default function LearningPathways() {
                 </main>
             </div>
         </div>
-        
     )
 }

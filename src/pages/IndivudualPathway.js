@@ -22,10 +22,6 @@ const useStyles = makeStyles({
     heading: {
         color: '#000000'
     },
-    view: {
-        marginLeft: 50,
-        marginRight: 50
-    }
 })
 
 export default function IndividualPathway(props) {
@@ -76,10 +72,10 @@ export default function IndividualPathway(props) {
 
     return(
         <Grid container spacing={3}>
-            <Grid item>
+            {/* <Grid item>
                 <SideBar />
-            </Grid>
-            <Grid item container xs direction='column' className={classes.view}>
+            </Grid> */}
+            <Grid item container xs direction='column'>
                 <Grid item>
                     <Typography>
                         {<DocumentHeading text={individualPathway.pathway} />}

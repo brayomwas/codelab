@@ -8,6 +8,8 @@ import DocumentHeading from "../components/DocumentHeading";
 import DocumentSubheading from "../components/DocumentSubheadng";
 import pathways from "../data/pathways.json";
 import IndividualPathway from "./IndivudualPathway";
+import Layout from '../components/Layout'
+
 
 const useStyles = makeStyles({
     mt70: {
@@ -38,9 +40,9 @@ function LearningPathways({ match }) {
 
   return (
     <Grid container spacing={3}>
-      <Grid item>
+      {/* <Grid item>
         <SideBar />
-      </Grid>
+      </Grid> */}
       <Grid item container xs direction="column">
         <Grid item xs>
           {/* Pathway Name */}
@@ -54,13 +56,14 @@ function LearningPathways({ match }) {
         </Grid>
       </Grid>
       
-      <Route 
+      {/* <Route 
           exact
-          path={`${match.url}/:individualPathway`}
+          path={`${match.path}/:individualPathway`}
           render={(props) => <IndividualPathway  data={pathways} {...props}/>}
-      />
-
+      /> */}
+      
     </Grid>
+    
   );
 }
 

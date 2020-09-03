@@ -3,28 +3,34 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Courses from './pages/Courses';
 import LearningPathways from './pages/LearningPathways';
 import 'materialize-css/dist/css/materialize.min.css'
-import Nav from './components/Nav'
+import Layout from './components/Layout'
 import './App.css';
+import HomePage from './pages/HomePage';
+import IndividualPathway from './pages/IndivudualPathway';
+// import pathways from './data/pathways.json'
 
 function App() {
   return (
     <Router>
       <>
-      <div>
-        <Nav />
-  
-      </div>
       <Switch>
-        <Route path="/courses">
-          <Courses />
+        <Route exact path='/'>
+          <Layout>
+            <HomePage />
+          </Layout>
         </Route>
-        {/* <Route exact path="/pathways/:pathway" render={(props) =>    <IndividualPathway {...props} pathway='Machine' />} /> */}
+
+        <Route path="/courses">
+          <Layout>
+             <Courses />
+         </Layout>
+        </Route>
 
          <Route 
             path='/pathways' 
-            render={(props) => <LearningPathways {...props}/>} 
+            render={(props) => <Layout><LearningPathways {...props}/></Layout>} 
           />
-          
+
       </Switch>
       </>
     

@@ -42,8 +42,8 @@ export default function SideBar() {
 
                     <Divider />
                     <List>
-                        {['InboxInboxInbox', 'Starred', 'Send Email', 'Drafts'].map((text, index) => (
-                            <ListItem button key={text}>
+                        {['Match and Code', 'Learning Pathways', 'Code Challenges', 'Drafts'].map((text, index) => (
+                            <ListItem button key={index}>
                                 <ListItemText primary={text} />
                             </ListItem>
                         ))}
