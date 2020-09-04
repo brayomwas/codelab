@@ -13,7 +13,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
-import Layout from '../components/Layout';
+
 
 
 
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mediaImg:{
     height:300,
-    width:350
+    width:350 
   },
   contentFeature:{
     alignContent:"right",
