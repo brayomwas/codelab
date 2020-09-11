@@ -2,9 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import  { Accordion , AccordionSummary, AccordionDetails, Typography, Grid }from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import CourseCard from "./CourseCard";
-import CardHeading from "./CardHeading";
 import PathwayCard from "./PathwayCard";
+import courses from '../data/courses.json';
+import Udemy from '../images/Udemy Banner.png';
+import Coursera from '../images/Coursera Banner.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,12 +22,19 @@ const useStyles = makeStyles((theme) => ({
   cards: {
     display: 'flex',
     flexDirection: 'row',
+  },
+  baseColor2: {
+    color: '#3366CC'
   }
 }));
 
 export default function StepAccordion(props) {
   const classes = useStyles();
+  // get courses data
+  const recommendedCourses = courses.data.filter(course => course[3] === props.summary).slice(0, 3);
+  console.log(recommendedCourses);
 
+  // insert data into cards
   return (
     <div className={classes.root}>
       <Accordion>
@@ -35,35 +43,28 @@ export default function StepAccordion(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>
+          <Typography variant='h6'>
             {`Step ${props.step} ${props.summary}`}
           </Typography>
         </AccordionSummary>
         <AccordionDetails className={classes.desc}>
           <Typography>
-            {/* <CardHeading text="Course Recs" /> */}
             {props.description}
           </Typography>
+          <Typography variant='h6' className={classes.baseColor2}>
+            Recommended Courses
+          </Typography>
           <Grid container direction='row' spacing={3}>
-            <Grid item xs>
-               <PathwayCard title={props.title} />
-            </Grid>
+            {
+              recommendedCourses.map(course => (
+                <Grid item xs>
+                  <PathwayCard title={course[5]} image={course[0] === 'Udemy'? Udemy : Coursera} buttonText='Get Started' linkDest='external' link={course[4]} />
+                </Grid>
+              ))
+            }
             
-            <Grid item xs>
-               <PathwayCard title={props.title} />
-            </Grid>
-
-            <Grid item xs>
-               <PathwayCard title={props.title} />
-            </Grid>
           </Grid>
-          {/* <div className={classes.cards}>
-            <CourseCard heading={props.heading} platform={props.platform} title={props.title} link={props.link} />
-            <CourseCard heading={props.heading} platform={props.platform} title={props.title} link={props.link} />
-          </div> */}
           
-          {/* <CourseCard heading={} platform={} title={} link={} />
-          <CourseCard heading={} platform={} title={} link={} /> */}
         </AccordionDetails>
       </Accordion>
     </div>

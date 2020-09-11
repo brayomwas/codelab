@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=Nunito:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,200&display=swap');
 html {
   overflow-x: hidden;
 }
@@ -12,9 +13,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Nunito', sans-serif;
 }
 img {
-  height: 40vh;
-  width: 40vw;
+  height: 60vh;
+  width: 72vw;
 }
+/* .container {
+  margin: '10px 100px' !important;
+  padding: '0';
+} */
 .app-bar {
   z-index: 1250 !important;
 }
@@ -42,9 +47,7 @@ button:hover {
   background: #01163B;
 
 }
-/* .card {
-  max-height: 350px!important;
-} */
+
 .nav {
   position: relative;
   margin: 0 15%;

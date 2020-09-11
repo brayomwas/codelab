@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledCardHeading = styled.h3`
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
     font-family: 'Nunito', sans-serif;
     font-size: 18px;
     font-weignt: 500;

@@ -1,27 +1,12 @@
 import React from 'react';
-import CourseCard from '../components/CourseCard'
-import MissingPathwayCard from '../components/MissingPathway'
+import { Grid, Typography,  } from '@material-ui/core';
+import PathwayCard from '../components/PathwayCard';
 import DocumentHeading from '../components/DocumentHeading'
-import courses from '../data/all-courses.json'
-// import courses from '../data/course_detail.json'
+import Udemy from '../images/Udemy Banner.png';
+import Coursera from '../images/Coursera Banner.jpg';
+import courses from '../data/courses.json'
 export default function LearningPathways() {
-    // const courseDetails = data.map(course => {
-    //     return (
-    //         {title: course.title,
-    //          instructors: course.instructors,
-    //          price: course.price,
-    //          enrolled: course.enrolled,
-    //          instructors: course.instructors,
-    //          reviews: course.reviews,
-    //          rating: course.rating,
-    //          platform: course.platform}
-    //     )
-    // });
-    // const rows = courseDetails.map(course => {
-    //     return (
-    //         <CourseCard className="course" heading={course.title} description={course.reviews.description} enrolled={course.enrolled} rating={course.rating} instructors={course.instructors} />
-    //     )
-    // })
+    
     let cardDetails;
     for (const key in courses) {
         if (key === 'data') {
@@ -33,48 +18,41 @@ export default function LearningPathways() {
 
                 }
             });
-            console.log(cardDetails);
         }
         
     }
 
     const rows = cardDetails.map((course) => {
         return (
-            <CourseCard className="course" heading={course.name} platform={course.platform} title={course.title} link={course.link} />
+            <Grid item xs={6} sm={4}>
+            <PathwayCard className="course" heading={course.name} platform={course.platform} title={course.title} link={course.link} image={course.platform === 'Udemy' ? Udemy : Coursera} buttonText='Get Started' linkDest='external'key={course.title}/> 
+            </Grid>
         )
     })
     
     return (
-        <div className="row">
-            <div className="col s12">
-                <main>
-                    <div className="row">
-                        {/* <div className="col l3">
-                            <aside className="sidebar">
-                                <nav className="transparent">
-                                 <ul>
-                                    <li>Home</li>
-                                    
-                                 </ul>
-                                </nav>
-                            </aside>
-                        </div> */}
-                        <div className="col l9">
-                            <DocumentHeading text="Courses"/>
-                            <p>View curricular guides to your learning pathway, discover on-demand skills from the job market and get recommendations to the best courses on Udemy, Coursera, edX etc</p>
-                            <section className="course-cards">
-                            
-                                 {rows}
-                                <MissingPathwayCard />
-                                <MissingPathwayCard />
-                                <MissingPathwayCard />
-                            </section>
-                        </div>
-                    </div>
-                    
-                   
-                </main>
-            </div>
-        </div>
+        <Grid container spacing={3} direction='column'>
+            {/* Heading */}
+            <Grid item xs>
+                <Typography variant='h1'>
+                    {<DocumentHeading text='Courses' />}
+                </Typography>
+            </Grid>
+
+            {/* Description */}
+
+            <Grid item xs>
+                <Typography variant='p'>
+                View curricular guides to your learning pathway, discover on-demand skills from the job market and get recommendations to the best courses on Udemy, Coursera, edX etc
+                </Typography>
+            </Grid>
+
+            {/* Cards */}
+
+            <Grid item container xs spacing={3} direction='row'>
+                {rows}
+            </Grid>
+        </Grid>
+
     )
 }

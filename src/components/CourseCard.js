@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Typography } from '@material-ui/core'
 import Udemy from '../images/Udemy Banner.png'
-import Coursera from '../images/Cousera Banner.jpg'
+import Coursera from '../images/Coursera Banner.jpg'
 import CardHeading from './CardHeading'
 
 export default function CourseCard(props) {

@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Courses from "../pages/Courses";
-import IndividualPathway from '../pages/IndivudualPathway';
-import LearningPathways from "../pages/LearningPathways";
 // import history from '../history'
 export default function Nav(props) {
   return (
@@ -10,7 +7,7 @@ export default function Nav(props) {
       <div className="navbar-fixed app-bar">
         <nav className="white">
           <div className="nav-wrapper">
-            <a href=""></a>
+            {/* <a href=""></a> */}
             <ul id="nav-mobile" className="right">
               <li>
                 <Link to="/" className="black-text">Home</Link>

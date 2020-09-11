@@ -1,26 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
-  Grid,
   Card,
   CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
   Typography,
-  Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Image from "../images/machine-learning.jpg";
 import CardHeading from "./CardHeading";
-import IndividualPathway from "../pages/IndivudualPathway";
 import ButtonRouter from "./Button";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 170,
   },
   background: {
     "&:hover": {
@@ -42,7 +37,7 @@ export default function PathwayCard(props) {
         <CardActionArea className={classes.background}>
           <CardMedia
             className={classes.media}
-            image={Image}
+            image={props.image}
             title={props.title}
           />
           <CardContent className={`${classes.content} ${classes.central}`}>
@@ -52,10 +47,7 @@ export default function PathwayCard(props) {
           </CardContent>
         </CardActionArea>
         <CardActions className={classes.central}>
-          {/* <Button size='small' color='primary' onClick={handleClick}>
-          Explore
-        </Button> */}
-          <ButtonRouter text={props.title} />
+          <ButtonRouter text={props.title} buttonText={props.buttonText} linkDest={props.linkDest} link={props.link}/>
         </CardActions>
       </Card>
     </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Button from './Button'
 export default function PathwayNav() {
     return (
         <Router>
