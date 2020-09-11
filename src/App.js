@@ -9,6 +9,7 @@ import theme from './theme'
 import './App.css';
 import Home from './pages/Home';
 import IndividualPathway from './pages/IndivudualPathway';
+import IndividualBlog from './pages/IndivudualBlog';
 import Blog from './pages/Blog';
 // import pathways from './data/pathways.json'
 
@@ -30,6 +31,12 @@ function App() {
         <Route path="/courses">
           <Layout>
              <Courses />
+         </Layout>
+        </Route>
+
+        <Route path="/individualBlog">
+          <Layout>
+             <IndividualBlog />
          </Layout>
         </Route>
 

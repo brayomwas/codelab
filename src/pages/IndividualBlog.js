@@ -17,7 +17,7 @@ import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 const useStyles = makeStyles((theme) => ({
     
   }));
-  function Blog() {
+  function IndividualBlog() {
     const classes = useStyles();
   
     return (
@@ -162,5 +162,5 @@ const useStyles = makeStyles((theme) => ({
     );
   }
   
-  export default Blog;
+  export default IndividualBlog;
   
