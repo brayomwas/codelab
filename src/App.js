@@ -8,8 +8,8 @@ import Layout from './components/Layout'
 import theme from './theme'
 import './App.css';
 import Home from './pages/Home';
-import IndividualPathway from './pages/IndivudualPathway';
-import IndividualBlog from './pages/IndivudualBlog';
+import IndividualPathway from './pages/IndividualPathway';
+import IndividualBlog from './pages/IndividualBlog';
 import Blog from './pages/Blog';
 // import pathways from './data/pathways.json'
 
