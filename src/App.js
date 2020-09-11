@@ -9,7 +9,10 @@ import theme from './theme'
 import './App.css';
 import Home from './pages/Home';
 import IndividualPathway from './pages/IndivudualPathway';
+import Blog from './pages/Blog';
 // import pathways from './data/pathways.json'
+
+
 
 function App() {
   return (
@@ -17,8 +20,11 @@ function App() {
     <Router>
       <>
       <Switch>
-        <Route exact path='/'>
-            <Home />
+        
+        <Route path='/blog'>
+          <Layout>
+            <Blog />
+            </Layout>
         </Route>
 
         <Route path="/courses">
@@ -37,6 +43,7 @@ function App() {
             path='/pathways' 
             render={(props) => <Layout><LearningPathways {...props}/></Layout>} 
           />
+          
 
       </Switch>
       </>
@@ -47,3 +54,4 @@ function App() {
 }
 
 export default App;
+  

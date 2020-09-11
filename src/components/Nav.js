@@ -19,6 +19,9 @@ export default function Nav(props) {
                 <Link to="/pathways" className='black-text'>
                   Pathways
                 </Link>
+                </li>
+                <li>
+                  <Link to="/blog" className="black-text">Blog</Link>
               </li>
             </ul>
           </div>
