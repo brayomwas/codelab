@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
   },
   date:{
     paddingTop:"40px"
+  },
+  blogHeader:{
+    paddingBottom:"40px"
   }
   }));
   function IndividualBlog() {
@@ -50,16 +53,19 @@ const useStyles = makeStyles((theme) => ({
   
     return (
       <div className="App">
-        <Container maxwidth="lg" className={classes.blogContainer}>
+        <Container  className={classes.blogContainer}>
           <Container>
             <Box>
-              <Typography className={classes.blogHeader} variant="h2" align="center">
+              <Typography className={classes.blogHeader} variant="h2">
                 Top 10 Javascript Libraries
               </Typography>
                 <Box>
-                  <img src="https://images.unsplash.com/photo-1482442120256-9c03866de390?ixlib=rb-1.2.1&ixid
-                  =eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"> 
+                 
+                    <img src="https://images.unsplash.com/photo-1482442120256-9c03866de390?ixlib=rb-1.2.1&ixid
+                    =eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"  alt="banner"> 
+                 
                   </img>
+                  
                 </Box>
             </Box>
           </Container>
@@ -98,89 +104,57 @@ const useStyles = makeStyles((theme) => ({
               need to know?
 
               Here are the 10 most popular programming languages:
+            </Typography>
 
-              1. Java
-              Java is top pick as one of the most popular programming languages, used for building server-side applications to 
-              video games and mobile apps. It's also the core foundation for developing Android apps, making it a favorite of many 
-              programmers. With its WORA mantra (write once, run anywhere), it's designed to be portable and run happily across 
-              multiple software platforms. I first got started with Java server programming back in 1999--it was so exciting, I 
-              actually wrote a few books about it. Java is everybody's pal!
+            
+            <h4>1. Java</h4>
+              <Typography variant="h5">
+                Java is top pick as one of the most popular programming languages, used for building server-side applications to 
+                video games and mobile apps. It's also the core foundation for developing Android apps, making it a favorite of many 
+                programmers. With its WORA mantra (write once, run anywhere), it's designed to be portable and run happily across 
+                multiple software platforms. I first got started with Java server programming back in 1999--it was so exciting, I 
+                actually wrote a few books about it. Java is everybody's pal!
+              </Typography>
 
-              2. Python
-              Python is a one-stop shop. There's a Python framework for pretty much anything, from web apps to data analysis. In fact, 
-              WordStream is written in Python! You're the best bud. Python is often heralded as the easiest programming 
-              language to learn, with its simple and straightforward syntax. Python has risen in popularity due to 
-              Google's investment in it over the past decade (in fact, one recent study has shown Python to be the most 
-              commonly taught programming language in U.S. schools). Other applications built with Python include 
-              Pinterest and Instagram.
+            
+            <h4>2. Python</h4>
+              <Typography variant="h5">
+                Python is a one-stop shop. There's a Python framework for pretty much anything, from web apps to data analysis. In fact, 
+                WordStream is written in Python! You're the best bud. Python is often heralded as the easiest programming 
+                language to learn, with its simple and straightforward syntax. Python has risen in popularity due to 
+                Google's investment in it over the past decade (in fact, one recent study has shown Python to be the most 
+                commonly taught programming language in U.S. schools). Other applications built with Python include 
+                Pinterest and Instagram.
+              </Typography>
 
-              3. C
-              If you saw C on a report card, you'd be pretty bummed. Maybe a bit confused, too (is it actually a B-?). 
-              However, C is not the bizarrely bad grade it seems to be. It's often the first programming language taught in 
-              college (well, it was for me 10 years ago). I thought it was a nice "in-between" language in that it was object 
-              oriented without having to be fanatical about it. It was also low level enough to be close to hardware, 
-              but no so low level that you had to do everything manually. Because there are so many C compilers, you can 
-              write stuff in C and have it run pretty much anywhere.
+            
+              <h4>3. C</h4>
+              <Typography variant="h5">
+                If you saw C on a report card, you'd be pretty bummed. Maybe a bit confused, too (is it actually a B-?). 
+                However, C is not the bizarrely bad grade it seems to be. It's often the first programming language taught in 
+                college (well, it was for me 10 years ago). I thought it was a nice "in-between" language in that it was object 
+                oriented without having to be fanatical about it. It was also low level enough to be close to hardware, 
+                but no so low level that you had to do everything manually. Because there are so many C compilers, you can 
+                write stuff in C and have it run pretty much anywhere.
+             </Typography>
 
-              4. Ruby
-              Ruby (also known as Ruby on Rails) is a major supplier of web apps. Ruby is popular due to its ease of learning 
-              (it's very straightforward) and power. Ruby knowledge is in high demand these days!
+            
+            <h4>4. Ruby</h4>
+              <Typography variant="h5">
+                Ruby (also known as Ruby on Rails) is a major supplier of web apps. Ruby is popular due to its ease of learning 
+                (it's very straightforward) and power. Ruby knowledge is in high demand these days!
+              </Typography>
 
-              5. JavaScript
+            
+            <h4>5. JavaScript</h4>
+            <Typography variant="h5">
               JavaScript (which, confusingly, is not at all related to Java) is another favorite programming language because 
               it's so ubiquitous on the web--it's basically everywhere. JavaScript allows developers to add interactive 
               elements to their website, and its presence is felt across the internet. At WordStream, we use a JavaScript 
               library called JQuery to make our JavaScript work even easier.
-
-              6. C#
-              C# (pronounced C-sharp, not C-hashtag for you Twitter fans) is the language used in order to develop Microsoft 
-              apps. C# is syntactically nearly identical to Java. I've spent much time training with C#, but if you're good 
-              at Java, you'll likely have an easy time jumping onto C#. If you're looking to work on Microsoft apps, C# is 
-              the way to go. C# opens a lot of Windows (har-har).
-
-              7. PHP
-              PHP (which stands for Hypertext Preprocessor, if you care to know) is often used in conjunction with dynamic 
-              data-heavy websites and app development. It provides a ton of power and is the beating heart of monster sites 
-              like WordPress and Facebook. What's really cool about PHP is that it's an open-source language, so there are 
-              tons of free pre-built modules that you can grab and modify to get your ideal results. PHP is also on the easy 
-              end of the learning spectrum, simply requiring you to embed the code within HTML. PHP is a must-learn language 
-              for aspiring web developers.
-
-              8. Objective-C
-              Objective-C is the programming language behind iOS apps. Apple's new language Swift is rising in the ranks, 
-              but Objective-C is still the recommended starting point for those looking to craft Apple apps for iPhones and 
-              iPads. Next stop--the iOS App Store!
-
-              9. SQL
-              SQL is a database query language (SQL stands for Structured Query Language) that's ideal when talking big data. 
-              SQL lets you siphon helpful data from massive databases. Nearly every app has a backend database, and SQL is the 
-              language that helps you interact with that sweet data. In terms of software development, SQL isn't ever used 
-              alone--rather, you invoke SQL from some other programming knowledge and you have yourself a nice package deal.
-
-              10. C 
-              C is the predecessor to more complex programming languages like Java and C#. C is best when you want to work small 
-              and when dealing with low-level applications. It's widely used for embedded systems like the firmware of your 
-              television or the operating system of an airplane, as well as computer operating systems like Windows. For me 
-              personally, C was more of an academic language. It was nice to learn how to write a kernel back in college, 
-              and you gain a more solid understanding of how newer languages work under the covers, but it's rare for most 
-              application developers to ever have to use this today.
-
-              There you have it--the king languages of coding. What's your programming language of choice and why? 
-              If you're a newbie looking to dive into coding, take a look at these nine spots on the web where you can learn to 
-              code (for free)! You'll be a code master in no time.
-
-                    
-              Editorial Disclosure: Inc. writes about products and services in this and other articles. 
-              These articles are editorially independent - that means editors and reporters research and write on these products 
-              free of any influence of any marketing or sales departments. In other words, no one is telling our reporters or 
-              editors what to write or to include any particular positive or negative information about these products or 
-              services in the article. The article's content is entirely at the discretion of the reporter and editor. 
-              You will notice, however, that sometimes we include links to these products and services in the articles. 
-              When readers click on these links, and buy these products or services, Inc may be compensated. 
-              This e-commerce based advertising model - like every other ad on our article pages - has no impact on our editorial 
-              coverage. Reporters and editors don't add those links, nor will they manage them. This advertising model, like 
-              others you see on Inc, supports the independent journalism you find on this site.
             </Typography>
+
+
           </Box>
         </Container>
 
@@ -194,7 +168,7 @@ const useStyles = makeStyles((theme) => ({
                   <CardActionArea>
                     <CardMedia className={classes.media}
                       component="img"
-                      alt="Contemplative Reptile"
+                      alt=""
                       height="140"
                       image="https://images.unsplash.com/photo-1581093448798-fa7eab922c96?ixlib=rb-1.2.1&ix
                       id=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
