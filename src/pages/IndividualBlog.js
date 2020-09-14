@@ -46,7 +46,12 @@ const useStyles = makeStyles((theme) => ({
   },
   blogHeader:{
     paddingBottom:"40px"
-  }
+  },
+ 
+   
+  
+
+  
   }));
   function IndividualBlog() {
     const classes = useStyles();
@@ -54,17 +59,19 @@ const useStyles = makeStyles((theme) => ({
     return (
       <div className="App">
         <Container  className={classes.blogContainer}>
-          <Container>
+          <Container  className={classes.blogContainer}>
             <Box>
               <Typography className={classes.blogHeader} variant="h2">
                 Top 10 Javascript Libraries
               </Typography>
-                <Box>
+                <Box className={classes.banner}>
                  
                     <img src="https://images.unsplash.com/photo-1482442120256-9c03866de390?ixlib=rb-1.2.1&ixid
-                    =eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"  alt="banner"> 
-                 
-                  </img>
+                    =eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"  
+                    alt="banner"
+                    width="1200px"
+                    
+                    /> 
                   
                 </Box>
             </Box>
@@ -159,7 +166,7 @@ const useStyles = makeStyles((theme) => ({
         </Container>
 
         <Container maxwidth="lg" className={classes.blogContainer} paddingTop="70px">
-          <Typography variant="h6" className={classes.blogTitle}>
+          <Typography variant="h3" className={classes.blogTitle}>
             Trending
           </Typography>
             <Grid container spacing={3}>
