@@ -21,7 +21,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 const useStyles = makeStyles((theme) => ({
   blogContainer: {
     paddingTop: theme.spacing(3),
-    alignContent:"right"
+    alignContent:"right",
   },
   blogTitle: {
     fontWeight:800,
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   
     return (
       <div className="App">
-        <Container  className={classes.blogContainer}>
+        <Container maxwidth="lg" className={classes.blogContainer}>
           <Container  className={classes.blogContainer}>
             <Box>
               <Typography className={classes.blogHeader} variant="h2">
@@ -69,8 +69,7 @@ const useStyles = makeStyles((theme) => ({
                     <img src="https://images.unsplash.com/photo-1482442120256-9c03866de390?ixlib=rb-1.2.1&ixid
                     =eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"  
                     alt="banner"
-                    width="1200px"
-                    
+                    width="900px"
                     /> 
                   
                 </Box>
