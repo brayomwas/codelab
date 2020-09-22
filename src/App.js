@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import IndividualPathway from './pages/IndividualPathway';
 import IndividualBlog from './pages/IndividualBlog';
 import Blog from './pages/Blog';
+import IndividualChallenge from './pages/IndividualChallenge';
 // import pathways from './data/pathways.json'
 
 
@@ -37,6 +38,12 @@ function App() {
         <Route path="/individualBlog">
           <Layout>
              <IndividualBlog />
+         </Layout>
+        </Route>
+
+        <Route path="/individualChallenge">
+          <Layout>
+             <IndividualChallenge />
          </Layout>
         </Route>
 
