@@ -18,7 +18,10 @@ wp = Client(website_link, username, password)
 
 post = WordPressPost()
 post.post_type = 'challenge'
-post.title = 'My Test Article'
-post.content = 'This is the body of my new post.'
+post.title = 'My Bold Test Article'
+post.content = '''
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<b>This is the body of my new post.</b>'''
 post.terms_names = {'post_tag': ['test', 'firstpost'],'category': ['Introductions', 'Tests']}
 wp.call(NewPost(post))
