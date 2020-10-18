@@ -1,60 +1,52 @@
-import React from 'react';
-import PathwayRow from '../components/PathwayRow'
-import CourseCard from '../components/CourseCard'
-import MissingPathwayCard from '../components/MissingPathway'
-import DocumentHeading from '../components/DocumentHeading'
-import data from '../data/Details.json'
-export default function LearningPathways() {
-    const courseDetails = data.map(course => {
-        return (
-            {title: course.title,
-             instructors: course.instructors,
-             price: course.price,
-             enrolled: course.enrolled,
-             instructors: course.instructors,
-             reviews: course.reviews,
-             rating: course.rating,
-             platform: course.platform}
-        )
+import React from "react";
+import { Link } from 'react-router-dom';
+import { Grid, Typography } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles'
+import PathwayCard from "../components/PathwayCard";
+import DocumentHeading from "../components/DocumentHeading";
+import pathways from "../data/pathways.json";
+import Image from "../images/machine-learning.jpg";
+
+const useStyles = makeStyles({
+    mt70: {
+        marginTop: '50px'
+    }
+});
+
+function LearningPathways({ match }) {
+    const classes = useStyles();
+
+    const allPathways = pathways.map((pathway) => {
+      let pathwayObj = { ...pathway };
+      return pathwayObj;
     });
-    const rows = courseDetails.map(course => {
-        return (
-            <CourseCard className="course" heading={course.title} description={course.reviews.description} enrolled={course.enrolled} rating={course.rating} instructors={course.instructors} />
-        )
-    })
+
+    const rows = allPathways.map((pathway) => (
+      <Grid item xs={6} sm={4}>
+        <Link to={`${match.url}/${pathway.pathway}`}>
+           <PathwayCard title={pathway.pathway} image={Image} buttonText='Explore' linkDest='internal' key={pathway.pathway}/>
+        </Link>
+      </Grid>
+    ));
     
-    return (
-        <div className="row">
-            <div className="col s12">
-                <main>
-                    <div className="row">
-                        <div className="col l3">
-                            <aside className="sidebar">
-                                <nav className="transparent">
-                                 <ul>
-                                    <li>Home</li>
-                                    
-                                 </ul>
-                                </nav>
-                            </aside>
-                        </div>
-                        <div className="col l9">
-                            <DocumentHeading text="Career Pathway Guides"/>
-                            <p>View curricular guides to your learning pathway, discover on-demand skills from the job market and get recommendations to the best courses on Udemy, Coursera, edX etc</p>
-                            <section className="course-cards">
-                            
-                                 {rows}
-                                <MissingPathwayCard />
-                                <MissingPathwayCard />
-                                <MissingPathwayCard />
-                            </section>
-                        </div>
-                    </div>
-                    
-                   
-                </main>
-            </div>
-        </div>
-        
-    )
+
+  return (
+    <Grid container spacing={3}>
+      <Grid item container xs direction="column">
+        <Grid item xs>
+          {/* Pathway Name */}
+          <Typography>
+            {<DocumentHeading text="Python Career Pathways" />}
+          </Typography>
+        </Grid>
+        <Grid item container xs spacing={3} className={classes.mt70}>
+          {/* Pathway cards */}
+          {rows}
+        </Grid>
+      </Grid>
+    </Grid>
+    
+  );
 }
+
+export default LearningPathways;

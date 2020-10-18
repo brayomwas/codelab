@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "python.testing.unittestArgs": [
         "-v",
         "-s",
@@ -9,4 +10,9 @@
     "python.testing.pytestEnabled": false,
     "python.testing.nosetestsEnabled": false,
     "python.testing.unittestEnabled": true
+=======
+    "editor.cursorStyle": "line-thin",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+>>>>>>> 31accfef79110ac2fc08f170c57ca5ac4d39c855
 }
