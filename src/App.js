@@ -15,6 +15,8 @@ import CodeChallenges from './pages/CodeChallenges';
 import Github from './pages/Github'
 // import pathways from './data/pathways.json'
 
+
+
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
@@ -79,3 +81,4 @@ function App() {
 }
 
 export default App;
+  

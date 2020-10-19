@@ -12,9 +12,10 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Nunito', sans-serif;
 }
-img {
-  height: 60vh;
-  width: 72vw;
+
+img {border-radius: 2%;
+  /* height: 60vh;
+  width: 72vw; */
 }
  .container {
   width: 85% !important;
@@ -82,3 +83,7 @@ button:hover {
 .step-section * {
   flex: 1 0 33%;
 }
+
+
+
+
