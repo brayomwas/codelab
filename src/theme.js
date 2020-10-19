@@ -23,6 +23,14 @@ const theme = createMuiTheme({
         p: {
             fontFamily: 'Alegreya, sans-serif', 
         }
+    },
+    palette: {
+        primary: {
+            main: '#011638'
+        },
+        secondary: {
+            main: '#3366CC'
+        }
     }
 });
 

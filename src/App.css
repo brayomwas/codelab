@@ -16,10 +16,9 @@ img {
   height: 60vh;
   width: 72vw;
 }
-/* .container {
-  margin: '10px 100px' !important;
-  padding: '0';
-} */
+ .container {
+  width: 85% !important;
+} 
 .app-bar {
   z-index: 1250 !important;
 }

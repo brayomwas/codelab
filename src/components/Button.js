@@ -26,7 +26,7 @@ function ButtonRouter(props) {
         <Router>
           <div>
             <Button
-              variant="outlined"
+              variant={props.variant}
               color="primary"
               className={classes.button}
               component={LinkBehavior}
@@ -43,7 +43,7 @@ function ButtonRouter(props) {
       
   } else if (props.linkDest === 'external') {
       button = (
-        <Button variant='outlined' color='primary' href={props.link}>
+        <Button variant={props.variant} color='primary' href={props.link}>
             <Typography>{props.buttonText}</Typography>
         </Button>
       )

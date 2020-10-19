@@ -47,7 +47,7 @@ export default function PathwayCard(props) {
           </CardContent>
         </CardActionArea>
         <CardActions className={classes.central}>
-          <ButtonRouter text={props.title} buttonText={props.buttonText} linkDest={props.linkDest} link={props.link}/>
+          <ButtonRouter text={props.title} buttonText={props.buttonText} linkDest={props.linkDest} link={props.link} variant='outlined'/>
         </CardActions>
       </Card>
     </div>
