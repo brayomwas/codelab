@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState, version } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import 
 { 
   Card, 
   CardContent,
   Container,
+  Box,
+  Button,
   Typography,
+  FormControl,
+  Select,
+  MenuItem,
+  InputLabel,
   Paper,
   Tabs,
   Tab } from '@material-ui/core';
+ 
 
 
 
@@ -19,31 +28,71 @@ const useStyles = makeStyles((theme)=>({
   },
 
   challengeLeft:{
+    flex:0.3
     
-    
+  },
+
+  metas:{
+    display:"flex",
+  },
+  
+  date:{
+    display:"flex",
+    paddingRight:"",
   },
 
   // Description Navigation
   descriptionNav: {
     flexGrow: 1,
-    maxWidth: 500,
+    maxWidth: "100%",
   },
 
   challengeDescription:{
     height:"500px",
     overflowY:"scroll",
+    padding:"20px",
   },
 
+challengeRight:{
+  display:"flex",
+  flexDirection:"column",
+  justifyContent:"flex-end",
+},
+
+  buttons:{
+    display:"flex",
+    margin:"15px 15px",
+    
+  },
+  language__dropdown:{
+    position:"relative",
+   display:"inlineBlock",
+    
+  },
+  FormControl:{
+
+  },
+
+  Button:{
+    
+  },
+
+  editor:{
+    flex:1,
+    height:"500px",
+    
+  },
 
 }));
 
 function IndividualChallenge() {
   const classes = useStyles();
 
-  const [value, setValue] = React.useState(0);
+  const [tab, setTab] = useState (0);
+  const [language, setLanguage] = useState(['language']);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setTab(newValue);
   };
 
 
@@ -53,11 +102,24 @@ function IndividualChallenge() {
             <Typography variant="h3" className={classes.challengeName}>
               Challenge Name
             </Typography>
-            
+
+            <Box className={classes.metas}>
+              <Box>
+                <AccountCircleIcon />
+              </Box>
+              <Box className={classes.date}>
+                <CalendarTodayIcon  />
+                <Typography>10/07/2020</Typography>
+              </Box>
+              <Box>
+                
+              </Box>
+            </Box>
+
             <Card>
               <Paper square className={classes.descriptionNav}>
                 <Tabs
-                  value={value}
+                  value={tab}
                   onChange={handleChange}
                   variant="fullWidth"
                   indicatorColor="primary"
@@ -144,31 +206,83 @@ function IndividualChallenge() {
             </Card>
           </div>
           
-           <div className={classes.codeEditor}>
-            <div className={classes.individualRight}>
-             <Container>
-              <Card >
-                <CardContent>
-                  Lorem Ipsum is simply dummy text of the printing 
-                  and typesetting industry. Lorem Ipsum has been 
-                  the industry's standard dummy text ever since 
-                  the 1500s, when an unknown printer took a galley 
-                  of type and scrambled it to make a type specimen 
-                  book. It has survived not only five centuries, 
-                  but also the leap into electronic typesetting, 
-                  remaining essentially unchanged. It was popularised 
-                  in the 1960s with the release of Letraset sheets 
-                  containing Lorem Ipsum passages, and more recently 
-                  with desktop publishing software like Aldus 
-                  PageMaker including versions of Lorem Ipsum.                  
-                </CardContent>
-              </Card>
-             </Container>
-            </div>
+          <div className={classes.challengeRight}>
+            <Container>
+              <div className={classes.buttons}>
+                <div>
+                  <Button variant="contained" color="primary" disableElevation>
+                    <Typography>Submit Challenge</Typography>
+                  </Button>
+                </div>
+                <div>
+                  <FormControl className={classes.language__dropdown}>
+                  <Select variant="outlined"
+                      value={language}
+                      onChange={handleChange}
+                    >
+
+                      <InputLabel id="demo-simple-select-label">Language</InputLabel>
+                        <MenuItem value={language}>{language}</MenuItem>
+                        <MenuItem value={language}>{language}</MenuItem>
+                    </Select>
+                  </FormControl>
+
+                  <FormControl className={classes.version__dropdown}>
+                    <Select variant="outlined"
+                      value={version}
+                      onChange={handleChange}
+                    >
+
+                      <InputLabel id="demo-simple-select-label">Version</InputLabel>
+                        <MenuItem value={version}>{version}</MenuItem>
+                        <MenuItem value={version}>{version}</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>  
+                <div>
+                  <Button variant="outlined" color="primary" disableElevation>
+                    <Typography>VIEW REPOSITORIES</Typography>
+                  </Button>
+                </div>
+                <div></div>
+                <div>
+                  <Button variant="contained" color="primary" disableElevation>
+                    <Typography>RUN</Typography>
+                  </Button>
+                </div>
+               
+
+                
+
+              </div>
+                    
+              <div className={classes.codeEditor}>
+                <Container>
+                  <Card className={classes.editor}>
+                    <CardContent>
+                      Lorem Ipsum is simply dummy text of the printing 
+                      and typesetting industry. Lorem Ipsum has been 
+                      the industry's standard dummy text ever since 
+                      the 1500s, when an unknown printer took a galley 
+                      of type and scrambled it to make a type specimen 
+                      book. It has survived not only five centuries, 
+                      but also the leap into electronic typesetting, 
+                      remaining essentially unchanged. It was popularised 
+                      in the 1960s with the release of Letraset sheets 
+                      containing Lorem Ipsum passages, and more recently 
+                      with desktop publishing software like Aldus 
+                      PageMaker including versions of Lorem Ipsum.                  
+                    </CardContent>
+                  </Card>
+                </Container>
+              </div>
+            
+            </Container>
+           
           </div>
               
         </div>
     )
 }
 
-export default IndividualChallenge
+export default IndividualChallenge;

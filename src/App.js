@@ -42,9 +42,9 @@ function App() {
         </Route>
 
         <Route path="/individualChallenge">
-          <Layout>
+          
              <IndividualChallenge />
-         </Layout>
+         
         </Route>
 
         <Route 
