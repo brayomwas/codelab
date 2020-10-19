@@ -62,6 +62,7 @@ challengeRight:{
   buttons:{
     display:"flex",
     margin:"15px 15px",
+    justifyContent:"space-between"
     
   },
   language__dropdown:{
@@ -69,13 +70,7 @@ challengeRight:{
    display:"inlineBlock",
     
   },
-  FormControl:{
-
-  },
-
-  Button:{
-    
-  },
+  
 
   editor:{
     flex:1,
@@ -213,8 +208,7 @@ function IndividualChallenge() {
                   <Button variant="contained" color="primary" disableElevation>
                     <Typography>Submit Challenge</Typography>
                   </Button>
-                </div>
-                <div>
+                
                   <FormControl className={classes.language__dropdown}>
                   <Select variant="outlined"
                       value={language}
@@ -239,13 +233,12 @@ function IndividualChallenge() {
                     </Select>
                   </FormControl>
                 </div>  
+
                 <div>
                   <Button variant="outlined" color="primary" disableElevation>
                     <Typography>VIEW REPOSITORIES</Typography>
                   </Button>
-                </div>
-                <div></div>
-                <div>
+                
                   <Button variant="contained" color="primary" disableElevation>
                     <Typography>RUN</Typography>
                   </Button>
