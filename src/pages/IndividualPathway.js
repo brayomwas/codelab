@@ -62,6 +62,10 @@ export default function IndividualPathway(props) {
                     </Typography>
                     {accordion}
                 </Grid>
+
+                <Grid item xs={12} md={10}>
+                    
+                </Grid>
             </Grid>
         </Grid>
     
