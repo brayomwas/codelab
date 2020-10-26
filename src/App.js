@@ -9,8 +9,8 @@ import theme from "./theme";
 import "./App.css";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
-import IndividualPathway from "./pages/IndivudualPathway";
-import IndividualBlogPage from "./pages/IndividualBlogPage";
+import IndividualPathway from "./pages/IndividualPathway";
+import IndividualBlog from "./pages/IndividualBlog";
 import CodeChallenges from './pages/CodeChallenges';
 import Github from './pages/Github'
 // import pathways from './data/pathways.json'
@@ -25,7 +25,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
 
-            <Route path="/individual" component={IndividualBlogPage} />
+            <Route path="/individual" component={IndividualBlog} />
 
             <Route path="/blog">
               <Layout>

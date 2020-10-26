@@ -5,7 +5,6 @@ import DocumentHeading from '../components/DocumentHeading';
 import ML from '../images/machine-learning.jpg';
 import Stepper from '../components/Stepper';
 import MobileStepper from '../components/Progress';
-import CustomisedStepper from '../components/CutomisedStepper'
 export default function CodeChallenges() {
     // const [searchValue, setSearchValue] = useState('Search');
     const [checked, setChecked] = useState(true);
@@ -225,9 +224,7 @@ export default function CodeChallenges() {
                      inputProps={{'aria-label': 'primary checkbox'}}
                      />
             </Grid>
-            <Grid item>
-                <CustomisedStepper />
-            </Grid>
+            
         </Grid>
     )
 }
