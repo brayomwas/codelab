@@ -11,7 +11,34 @@ import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 const useStyles = makeStyles((theme) => ({
-  
+  cardFeature:{
+    display:"flex"
+  },
+  cardActions:{
+    display:"flex",
+    margin:"0 0 10px",
+    justifyContent:"space-between"
+  },
+  author:{
+    display:"flex"
+  },
+  mediaFeatureOther:{ 
+  maxWidth:"50%",
+  display:"flex",
+  flexDirection:"column"
+},
+mediaOther:{
+  height:150,
+  width:150
+},
+  contentFeature:{
+    alignContent:"right",
+    alignItems:"right",
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"right"
+
+  },
 }));
 
 function ExploreBlogCard() {
