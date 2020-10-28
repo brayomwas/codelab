@@ -28,8 +28,8 @@
 //     },
 // })(StepConnector);
 
-// export default function QontoStepIcon(props) {
-//     const classes = useQontoStepIconStyles();
+// function QontoStepIcon(props) {
+//     const classes = useQontoStepIconStyes();
 //     const [active, completed] = props;
 
 //     return (
@@ -42,4 +42,3 @@
 //         </div>
 //     )
 // }
-

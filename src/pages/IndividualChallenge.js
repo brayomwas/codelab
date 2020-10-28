@@ -25,11 +25,10 @@ const useStyles = makeStyles((theme)=>({
   individualChallenge:{
     display:"flex",
     flex:0.4
-    
   },
 
   challengeLeft:{
-    flex:0.4
+    flex:0.3
     
   },
 
@@ -57,12 +56,12 @@ const useStyles = makeStyles((theme)=>({
 challengeRight:{
   display:"flex",
   flexDirection:"column",
-  
+  justifyContent:"flex-end",
 },
 
   buttons:{
     display:"flex",
-    
+    margin:"15px 15px",
     justifyContent:"space-between"
     
   },

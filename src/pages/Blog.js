@@ -3,30 +3,22 @@ import { makeStyles } from '@material-ui/core/styles';
 import FeaturedBlogCard from "../components/FeaturedBlogCard";
 import PopularBlogCard from "../components/PopularBlogCard";
 import TrendingBlogCard from "../components/TrendingBlogCard";
-import ExploreBlogCard from "../components/ExploreBlogCard"
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
+import ExploreBlogCard from "../components/ExploreBlogCard";
+import BlogSidebar from "../components/BlogSidebar";
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-// import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
 import Box from '@material-ui/core/Box';
-// import Avatar from '@material-ui/core/Avatar';
-// import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 
 
 
 
 const useStyles = makeStyles((theme) => ({
-  // appbar: {
-  //   backgroundColor:"#white",
-  //   display:"transparent"
-  // },
+  appbar: {
+    backgroundColor:"#white",
+    display:"transparent"
+  },
   blogContainer: {
     paddingTop: theme.spacing(3)
   },
@@ -76,7 +68,14 @@ const useStyles = makeStyles((theme) => ({
 mediaOther:{
   height:150,
   width:150
-}
+},
+bottom__page:{
+  display:"flex",
+  
+},
+blog__sidebar:{
+  paddingTop: theme.spacing(4)
+},
 }));
 
 function Blog() {
@@ -101,7 +100,7 @@ function Blog() {
 
           </Grid>
       </Container>
-
+      
       <Container maxwidth="lg" className={classes.blogContainer}>
         <Typography variant="h6" className={classes.blogTitle}>
             Popular
@@ -116,7 +115,7 @@ function Blog() {
             </Grid>
           </Grid>
       </Container>
-
+        
       <Container maxwidth="lg" className={classes.blogContainer}>
         <Typography variant="h6" className={classes.blogTitle}>
             Trending
@@ -135,34 +134,45 @@ function Blog() {
             </Grid>
             
           </Grid>
-          <Container maxwidth="lg" className={classes.blogContainer}>
-          <Typography variant="h6" className={classes.blogTitle}>
-            Explore Other Blogs
-          </Typography>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <ExploreBlogCard />
-            </Grid>
 
-            <Grid item xs={12}>
-              <ExploreBlogCard />
-            </Grid>
+          <div className={classes.bottom__page}>
+            <div className={classes.explore__blogs}>
+              <Container maxwidth="lg" className={classes.blogContainer}>
+              <Typography variant="h6" className={classes.blogTitle}>
+                Explore Other Blogs
+              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
 
-            <Grid item xs={12}>
-              <ExploreBlogCard />
-            </Grid>
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
 
-            <Grid item xs={12}>
-              <ExploreBlogCard />
-            </Grid>
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
 
-            <Grid item xs={12}>
-              <ExploreBlogCard />
-            </Grid>
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
 
-            
-            </Grid>
-          </Container>
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
+                </Grid>
+              </Container>
+            </div>
+
+            <div className={classes.blog__sidebar}>
+              <BlogSidebar />
+            </div>
+          </div>
+          
+          
+
+         
       </Container>
       </Box>
       
