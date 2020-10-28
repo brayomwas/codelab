@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,200&display=swap');
+html {
+  overflow-x: hidden;
+}
+html, body {
+  font-family: 'Alegreya Sans', sans-serif;
+  color: #3a3a3a;
+  /* overflow-x: hidden; */
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif;
+}
+
+img {border-radius: 2%;
+  /* height: 60vh;
+  width: 72vw; */
+}
+ .container {
+  width: 85% !important;
+} 
+.app-bar {
+  z-index: 1250 !important;
+}
+button:hover {
+  background-color: #3366cc;
+  color: white;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mt-20 {
+  margin-top: 20;
+}
+.mt {
+  margin-top: 100;
+}
+.nav-bg {
+  background-color: rgba(#3366cc, 0.25);
+}
+.sidebar {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  left: 0;
+  background: #01163B;
+
+}
+
+.nav {
+  position: relative;
+  margin: 0 15%;
+  text-align: right;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 500;
+}
+
+.nav ul {
+  list-style: none;
+  
+}
+
+.course-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.course-cards * {
+  flex: 1 0 33%;
+}
+
+.step-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.step-section * {
+  flex: 1 0 33%;
+}
+
+
+
+

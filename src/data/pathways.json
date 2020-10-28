@@ -1,0 +1,222 @@
+[
+    {
+        "pathway": "Data Science",
+        "data": [
+            {
+                "step": "1",
+                "pathwayModule": "Python Programming",
+                "description": "Get the fundamentals of python programming from conditionals, loops, data structures, object-oriented programming, to web scraping and APIs."
+            },
+            {
+                "step": "2",
+                "pathwayModule": "Scientific Python Libraries",
+                "description": "Understand the common libraries for data analysis: numpy, scipy, pandas, matplotlib, seaborn."
+            },
+            {
+                "step": "3",
+                "pathwayModule": "Database Management",
+                "description": "Learn how to work with SQL and NoSQL Databases, understand SQL Programming and how to integrate databases with python scripts."
+            },
+            {
+                "step": "4",
+                "pathwayModule": "Mathematics & Statistics",
+                "description": "Understand the math and statistics concepts for machine learning: calculus, linear algebra, optimization, inferential statistics, & probability."
+            },
+            {
+                "step": "5",
+                "pathwayModule": "Machine Learning",
+                "description": "Go through supervised and unsupervised learning algorithms, understand how to use machine learning libraries like Scikit Learn for modeling and learn how to evaluate your models and optimize their accuracy/results."
+            },
+            {
+                "step": "6",
+                "pathwayModule": "Cloud Computing",
+                "description": "Grasp a cloud computing platform such as Azure, AWS, Google Cloud, IBM Cloud, or Oracle Cloud to deploy your ML and AI  models."
+            },
+            {
+                "step": "7",
+                "pathwayModule": "Big Data",
+                "description": "Understand how to handle big data by learning Apache Spark or Apache Hadoop."
+            },
+            {
+                "step": "bonus1",
+                "pathwayModule": "Version Control",
+                "description": "Learn how to use Git and Github for version control."
+            },
+            {
+                "step": "bonus2",
+                "pathwayModule": "Microsoft Excel",
+                "description": "There’s no avoiding Excel in today’s corporate world and you should be well familiar with how to work with data on excel as on python data frames."
+            },
+            {
+                "step": "bonus3",
+                "pathwayModule": "Visualization Tools",
+                "description": "Learn other common tools for data manipulation such as Flare, PowerBI and Tableau."
+            }
+        ]
+    },
+    {
+        "pathway": "General Programming",
+        "data": [
+            {
+                "step": "1",
+                "pathwayModule": "Python Programming",
+                "description": "Get the fundamentals of python programming from conditionals, loops, data structures, object-oriented programming, to web scraping and APIs."
+            },
+            {
+                "step": "2",
+                "pathwayModule": "Databases with Python",
+                "description": "Learn database management and how to work with SQL and NoSQL Databases."
+            },
+            {
+                "step": "3",
+                "pathwayModule": "APIs and REST APIs",
+                "description": "Learn how to work with general application program interfaces and common REST APIs."
+            },
+            {
+                "step": "4",
+                "pathwayModule": "Web Scraping & Automation",
+                "description": "Learn libraries such as BeautifulSoup and Selenium for web data scraping and automation."
+            },
+            {
+                "step": "5",
+                "pathwayModule": "Web Development Frameworks",
+                "description": "Learn how to build web applications with Python through a web framework such as Django or Flask."
+            },
+            {
+                "step": "6",
+                "pathwayModule": "GUI Development",
+                "description": "Get technical into in graphical user development by learning frameworks such TKinter, Kivy, & PyQT."
+            },
+            {
+                "step": "7",
+                "pathwayModule": "Data Algorithms",
+                "description": "Learn how to design and build data algorithms that fulfil the target functionality with optimal speed."
+            },
+            {
+                "step": "bonus1",
+                "pathwayModule": "Mobile Development",
+                "description": "Build simple mobile apps with the Kivy Framework."
+            },
+            {
+                "step": "bonus2",
+                "pathwayModule": "Game Development",
+                "description": "Learn how to build games with Python through frameworks such as PyGame, OpenGL, & PyGlet."
+            },
+            {
+                "step": "bonus3",
+                "pathwayModule": "Data Analysis & Visualization",
+                "description": "Manipulate, analyse and visualize data with python by learning scientific python through libraries such as Numpy, Scipy, Pandas, Matplotlib & Seaborn."
+            }
+        ]
+    },
+    {
+        "pathway": "Machine Learning & AI",
+        "data": [
+            {
+                "step": "1",
+                "pathwayModule": "Python Programming",
+                "description": "Get the fundamentals of python programming from conditionals, loops, data structures, object-oriented programming, to web scraping and APIs."
+            },
+            {
+                "step": "2",
+                "pathwayModule": "Scientific Python Libraries",
+                "description": "Understand the common libraries for data analysis: numpy, scipy, pandas, matplotlib, seaborn."
+            },
+            {
+                "step": "3",
+                "pathwayModule": "Mathematics & Statistics",
+                "description": "Understand the math and statistics concepts for machine learning: calculus, linear algebra, optimization, inferential statistics, & probability."
+            },
+            {
+                "step": "4",
+                "pathwayModule": "Machine Learning",
+                "description": "Go through supervised and unsupervised learning algorithms, understand how to use machine learning libraries like Scikit Learn for modeling and learn how to evaluate your models and optimize their accuracy/results."
+            },
+            {
+                "step": "5",
+                "pathwayModule": "Deep Learning",
+                "description": "Learn how neural networks work and python deep learning libraries such as TensorFlow, PyTorch, Theano, Keras among others."
+            },
+            {
+                "step": "6",
+                "pathwayModule": "Cloud Computing",
+                "description": "Grasp a cloud computing platform such as Azure, AWS, Google Cloud, IBM Cloud, or Oracle Cloud to deploy your ML and AI  models."
+            },
+            {
+                "step": "7",
+                "pathwayModule": "Big Data",
+                "description": "Understand how to handle big data by learning Apache Spark or Apache Hadoop."
+            },
+            {
+                "step": "bonus1",
+                "pathwayModule": "Version Control",
+                "description": "Learn how to use Git and Github for version control."
+            },
+            {
+                "step": "bonus2",
+                "pathwayModule": "Data Algorithms",
+                "description": "Learn how to design and build data algorithms that fulfil the target functionality with optimal speed."
+            },
+            {
+                "step": "bonus3",
+                "pathwayModule": "Visualization Tools",
+                "description": "Learn other common tools for data manipulation such as Flare, PowerBI and Tableau."
+            }
+        ]
+    },
+    {
+        "pathway": "Web Development",
+        "data": [
+            {
+                "step": "1",
+                "pathwayModule": "HTML, CSS, Bootstrap",
+                "description": "Build basic websites by learning HTML Markup, CSS Styling and Bootstrap."
+            },
+            {
+                "step": "2",
+                "pathwayModule": "Javascript Programming",
+                "description": "Learn JavaScript and how it is used with HTML Pages for web design and interactivity."
+            },
+            {
+                "step": "3",
+                "pathwayModule": "Python Programming",
+                "description": "Get the fundamentals of python programming from conditionals, loops, data structures, object-oriented programming, to web scraping and APIs."
+            },
+            {
+                "step": "4",
+                "pathwayModule": "Data Algorithms",
+                "description": "Learn how to design and build data algorithms that fulfil the target functionality with optimal speed."
+            },
+            {
+                "step": "5",
+                "pathwayModule": "Database Management",
+                "description": "Learn database management and how to work with SQL and NoSQL Databases."
+            },
+            {
+                "step": "7",
+                "pathwayModule": "Django Web Framework",
+                "description": "Build web applications with Python through the Django Framework."
+            },
+            {
+                "step": "7",
+                "pathwayModule": "Rest APIs with Flask",
+                "description": "Learn REST APIs through the Flask Framework."
+            },
+            {
+                "step": "bonus1",
+                "pathwayModule": "Version Control",
+                "description": "Learn how to use Git and Github for version control."
+            },
+            {
+                "step": "bonus2",
+                "pathwayModule": "Cloud, Servers & Containers",
+                "description": "Understand how to deploy your web applications on the cloud or web hosting by learning a cloud architecture such as AWS, Azure, Google Cloud; web servers such as Apache and NGINX and finally container orchestration with Docker or NPM."
+            },
+            {
+                "step": "bonus3",
+                "pathwayModule": "FrontEnd Frameworks",
+                "description": "Learn React, Angular, or Vue frameworks for frontend design with JavaScript."
+            }
+        ]
+    }
+]
