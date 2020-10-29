@@ -6,7 +6,7 @@ const StyledHeading = styled.h1`
     font-family: 'Open Sans', sans-serif;
     font-size: 40px;
     font-weight: 400;
-    color: #011638;
+    color: #3366cc;
 `;
 
 

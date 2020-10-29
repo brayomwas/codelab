@@ -11,12 +11,16 @@ import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    border: 0
+  },
   cardFeature:{
+    background: 'transparent',
     display:"flex"
   },
   cardActions:{
     display:"flex",
-    margin:"0 0 10px",
+    margin:"0 0 0px",
     justifyContent:"space-between"
   },
   author:{
@@ -28,8 +32,9 @@ const useStyles = makeStyles((theme) => ({
   flexDirection:"column"
 },
 mediaOther:{
-  height:150,
-  width:150
+  height:'100%',
+  width:'100%',
+  borderRadius: 0
 },
   contentFeature:{
     alignContent:"right",
