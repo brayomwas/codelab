@@ -161,7 +161,6 @@ export default function Layout({children}) {
             <main className={classes.content}>
                 <div className={classes.toolbar} />
                 {children}
-                <Footer />
             </main>
         </div>
     )

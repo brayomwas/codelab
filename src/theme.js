@@ -3,25 +3,39 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
     typography: {
         h1: {
-            fontFamily: 'Nunito, sans-serif',
+            fontFamily: 'Open Sans, sans-serif',
+            fontSize: 40,
+            fontWeight: 400,
         },
         h2: {
-            fontFamily: 'Nunito, sans-serif',
+            fontFamily: 'Open Sans, sans-serif',
+            fontSize: 30,
+            fontWeight: 400,
         },
         h3: {
-            fontFamily: 'Nunito, sans-serif',
+            fontFamily: 'Open Sans, sans-serif',
+            fontSize: 25,
+            fontWeight: 400,
         },
         h4: {
-            fontFamily: 'Nunito, sans-serif',
+            fontFamily: 'Open Sans, sans-serif',
+            fontSize: 22.5,
+            fontWeight: 400,
         },
         h5: {
-            fontFamily: 'Nunito, sans-serif',
+            fontFamily: 'Open Sans, sans-serif',
+            fontSize: 20,
+            fontWeight: 400,
         },
         h6: {
-            fontFamily: 'Nunito, sans-serif',
+            fontFamily: 'Open Sans, sans-serif',
+            fontSize: 18,
+            fontWeight: 400,
         },
         p: {
-            fontFamily: 'Alegreya, sans-serif', 
+            fontFamily: 'Roboto, sans-serif',
+            fontSize: 16,
+            fontWeight: 400, 
         }
     },
     palette: {

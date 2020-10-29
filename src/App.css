@@ -5,20 +5,21 @@ html {
   overflow-x: hidden;
 }
 html, body {
-  font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #3a3a3a;
   /* overflow-x: hidden; */
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-img {border-radius: 2%;
+img {border-radius: 10px;
   /* height: 60vh;
   width: 72vw; */
 }
  .container {
-  width: 85% !important;
+  /*width: 85% !important;*/
+  max-width: 500;
 } 
 .app-bar {
   z-index: 1250 !important;
