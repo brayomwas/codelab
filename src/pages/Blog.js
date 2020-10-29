@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import DocumentHeading from '../components/DocumentHeading';
 import FeaturedBlogCard from "../components/FeaturedBlogCard";
 import PopularBlogCard from "../components/PopularBlogCard";
 import TrendingBlogCard from "../components/TrendingBlogCard";
