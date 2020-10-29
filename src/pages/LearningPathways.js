@@ -58,7 +58,7 @@ function LearningPathways({ match }) {
         <Grid item container direction='row' xs={12} md={10}> 
           <Grid item container direction='column'>
             <Grid item>
-              <Typography variant='h4'>
+              <Typography variant='h3'>
                   Suggest a Career Pathway!
               </Typography>
             </Grid>

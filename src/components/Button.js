@@ -13,6 +13,13 @@ const useStyles = makeStyles({
   button: {
     display: "flex",
     justifyContent: "center",
+    background: "#3366cc",
+    '&:hover': {
+      background: "#011638",
+    },
+    paddingBottom: 10,
+    paddingTop: 10,
+    color: '#fff',
   },
 });
 
@@ -27,7 +34,7 @@ function ButtonRouter(props) {
           <div>
             <Button
               variant={props.variant}
-              color="primary"
+              //color="primary"
               className={classes.button}
               component={LinkBehavior}
               to={ `${props.match.url}/${props.text}`}
@@ -43,7 +50,7 @@ function ButtonRouter(props) {
       
   } else if (props.linkDest === 'external') {
       button = (
-        <Button variant={props.variant} color='primary' href={props.link}>
+        <Button variant={props.variant} color='primary' href={props.link} className={classes.buttonText}>
             <Typography>{props.buttonText}</Typography>
         </Button>
       )
