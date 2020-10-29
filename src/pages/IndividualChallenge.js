@@ -67,10 +67,13 @@ challengeRight:{
   },
   language__dropdown:{
     position:"relative",
-   display:"inlineBlock",
+   display:"inline-block",
     
   },
-  
+
+  buttonsLeft:{
+    justifyContent:"space-evenly"
+  },
 
   editor:{
     flex:1,
@@ -204,44 +207,45 @@ function IndividualChallenge() {
           <div className={classes.challengeRight}>
             <Container>
               <div className={classes.buttons}>
-                <div>
-                  <Button variant="contained" color="primary" disableElevation>
-                    <Typography>Submit Challenge</Typography>
-                  </Button>
-                
-                  <FormControl className={classes.language__dropdown}>
-                  <Select variant="outlined"
-                      value={language}
-                      onChange={handleChange}
-                    >
-
-                      <InputLabel id="demo-simple-select-label">Language</InputLabel>
-                        <MenuItem value={language}>{language}</MenuItem>
-                        <MenuItem value={language}>{language}</MenuItem>
-                    </Select>
-                  </FormControl>
-
-                  <FormControl className={classes.version__dropdown}>
+                <div className={classes.buttonsLeft}>
+                    <Button variant="contained" color="primary"  disableElevation>
+                      <Typography>Submit Challenge</Typography>
+                    </Button>
+                  
+                    <FormControl className={classes.language__dropdown}>
                     <Select variant="outlined"
-                      value={version}
-                      onChange={handleChange}
-                    >
+                        value={language}
+                        onChange={handleChange}
+                      >
 
-                      <InputLabel id="demo-simple-select-label">Version</InputLabel>
-                        <MenuItem value={version}>{version}</MenuItem>
-                        <MenuItem value={version}>{version}</MenuItem>
-                    </Select>
-                  </FormControl>
+                        <InputLabel id="demo-simple-select-label">Language</InputLabel>
+                          <MenuItem value={language}>{language}</MenuItem>
+                          <MenuItem value={language}>{language}</MenuItem>
+                      </Select>
+                    </FormControl>
+                 
+                    <FormControl className={classes.version__dropdown}>
+                      <Select variant="outlined"
+                        value={version}
+                        onChange={handleChange}
+                      >
+
+                        <InputLabel id="demo-simple-select-label">Version</InputLabel>
+                          <MenuItem value={version}>{version}</MenuItem>
+                          <MenuItem value={version}>{version}</MenuItem>
+                      </Select>
+                    </FormControl>
                 </div>  
 
-                <div>
-                  <Button variant="outlined" color="primary" disableElevation>
-                    <Typography>VIEW REPOSITORIES</Typography>
-                  </Button>
-                
-                  <Button variant="contained" color="primary" disableElevation>
-                    <Typography>RUN</Typography>
-                  </Button>
+                <div className={classes.buttonsRight}>
+                  
+                    <Button variant="outlined" color="primary" disableElevation>
+                      <Typography>VIEW REPOS</Typography>
+                    </Button>
+
+                    <Button variant="contained" color="primary" disableElevation>
+                      <Typography>RUN</Typography>
+                    </Button>
                 </div>
                
 
@@ -250,7 +254,7 @@ function IndividualChallenge() {
               </div>
                     
               <div className={classes.codeEditor}>
-                <Container>
+                
                   <Card className={classes.editor}>
                     <CardContent>
                       Lorem Ipsum is simply dummy text of the printing 
@@ -267,7 +271,7 @@ function IndividualChallenge() {
                       PageMaker including versions of Lorem Ipsum.                  
                     </CardContent>
                   </Card>
-                </Container>
+                
               </div>
             
             </Container>

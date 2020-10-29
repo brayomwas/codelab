@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import IndividualPathway from "./pages/IndividualPathway";
 import IndividualBlog from "./pages/IndividualBlog";
+import IndividualChallenge from "./pages/IndividualChallenge";
 import CodeChallenges from './pages/CodeChallenges';
 import Github from './pages/Github'
 // import pathways from './data/pathways.json'
@@ -26,7 +27,13 @@ function App() {
             <Route exact path="/" component={Home} />
 
             <Route path="/individual" component={IndividualBlog} />
-
+            
+            <Route path="/individualBlog">
+              <Layout>
+                <IndividualBlog />
+              </Layout>
+            </Route>
+            
             <Route path="/blog">
               <Layout>
                 <Blog />
@@ -36,6 +43,12 @@ function App() {
             <Route path="/courses">
               <Layout>
                 <Courses />
+              </Layout>
+            </Route>
+
+            <Route path="/individualChallenge">
+              <Layout>
+                <IndividualChallenge />
               </Layout>
             </Route>
 
