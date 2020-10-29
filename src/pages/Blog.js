@@ -15,15 +15,12 @@ import Box from '@material-ui/core/Box';
 
 
 const useStyles = makeStyles((theme) => ({
-  appbar: {
-    backgroundColor:"#white",
-    display:"transparent"
-  },
+  
   blogContainer: {
     paddingTop: theme.spacing(3)
   },
   blogTitle: {
-    fontWeight:800,
+    fontWeight:400,
     paddingBottom: theme.spacing(3)
   },
   cardFeature:{
