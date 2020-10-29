@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth:"100%"
   },
   media:{
-    height:240
+    height:100
   },
   cardActions:{
     display:"flex",
