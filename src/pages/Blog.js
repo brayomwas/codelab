@@ -16,7 +16,9 @@ import Box from '@material-ui/core/Box';
 
 
 const useStyles = makeStyles((theme) => ({
-  
+  blog:{
+    display:"flex-end"
+  },
   blogContainer: {
     paddingTop: theme.spacing(3)
   },
@@ -69,6 +71,7 @@ mediaOther:{
 },
 bottom__page:{
   display:"flex",
+  alignItems:"left"
   
 },
 blog__sidebar:{
@@ -80,10 +83,10 @@ function Blog() {
   const classes = useStyles();
 
   return (
-    <div className="blog">
-      <h1>Explore Blogs</h1>
-      
+    <div className={classes.blog}>
+    
       <Box>
+      <DocumentHeading text="Explore Blogs"/>
       <Container maxwidth="lg" className={classes.blogContainer}>
         <Typography variant="h6" className={classes.blogTitle}>
           Featured
@@ -114,66 +117,66 @@ function Blog() {
           </Grid>
       </Container>
         
-      <Container maxwidth="lg" className={classes.blogContainer}>
-        <Typography variant="h6" className={classes.blogTitle}>
-            Trending
-          </Typography>
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6} md={4}>
-              <TrendingBlogCard />
+        <Container maxwidth="lg" className={classes.blogContainer}>
+          <Typography variant="h6" className={classes.blogTitle}>
+              Trending
+            </Typography>
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={6} md={4}>
+                <TrendingBlogCard />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TrendingBlogCard />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TrendingBlogCard />
+              </Grid>
+              
             </Grid>
 
-            <Grid item xs={12} sm={6} md={4}>
-              <TrendingBlogCard />
-            </Grid>
+            <div className={classes.bottom__page}>
+              <div className={classes.explore__blogs}>
+                <Container maxwidth="lg" className={classes.blogContainer} margin="0px">
+                <Typography variant="h6" className={classes.blogTitle}>
+                  Explore Other Blogs
+                </Typography>
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
 
-            <Grid item xs={12} sm={6} md={4}>
-              <TrendingBlogCard />
-            </Grid>
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
+                  </Grid>
+                </Container>
+              </div>
+
+              <div className={classes.blog__sidebar}>
+                <BlogSidebar />
+              </div>
+            </div>
             
-          </Grid>
+            
 
-          <div className={classes.bottom__page}>
-            <div className={classes.explore__blogs}>
-              <Container maxwidth="lg" className={classes.blogContainer}>
-              <Typography variant="h6" className={classes.blogTitle}>
-                Explore Other Blogs
-              </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12}>
-                  <ExploreBlogCard />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <ExploreBlogCard />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <ExploreBlogCard />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <ExploreBlogCard />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <ExploreBlogCard />
-                </Grid>
-                </Grid>
-              </Container>
-            </div>
-
-            <div className={classes.blog__sidebar}>
-              <BlogSidebar />
-            </div>
-          </div>
           
-          
-
-         
-      </Container>
-      </Box>
+        </Container>
       
+      </Box>
     </div>
   );
 }

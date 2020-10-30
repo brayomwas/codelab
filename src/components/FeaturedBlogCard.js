@@ -9,6 +9,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import { Link } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
   cardFeature:{
@@ -45,6 +47,7 @@ function Featuredblogcard() {
 
   return (
     <div className="featuredblogcard">
+      <Link to="/individualBlog">
       <Card className={classes.cardFeature}>
       <Box className={classes.mediaFeature}>
         <CardMedia className={classes.mediaImg}
@@ -89,6 +92,8 @@ function Featuredblogcard() {
                     </CardActions>
                     </CardActionArea>
       </Card>
+      
+      </Link>
       
                 
     </div>

@@ -9,6 +9,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import { Link } from 'react-router-dom';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +35,7 @@ function PopularBlogCard() {
 
   return (
     <div className="popular__blogCard">
+      <Link to="/individualBlog">
       <Card className={classes.card}>
         <CardActionArea>
           <CardMedia className={classes.media}
@@ -72,6 +75,8 @@ function PopularBlogCard() {
                     </Box>
                   </CardActions>
                 </Card>
+      </Link>
+      
     </div>
   )
 }

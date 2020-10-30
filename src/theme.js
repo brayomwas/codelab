@@ -6,6 +6,7 @@ const theme = createMuiTheme({
             fontFamily: 'Open Sans, sans-serif',
             fontSize: 40,
             fontWeight: 400,
+            
         },
         h2: {
             fontFamily: 'Open Sans, sans-serif',
