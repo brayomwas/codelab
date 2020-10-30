@@ -9,14 +9,23 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import { Link } from 'react-router-dom';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     border: 0
   },
   cardFeature:{
+<<<<<<< HEAD
     background: 'transparent',
     display:"flex"
+=======
+    display:"flex",
+    maxWidth:"100%",
+>>>>>>> 34dde1e3beccb5672d962e365ac6da5e74daebd8
   },
   cardActions:{
     display:"flex",
@@ -31,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   display:"flex",
   flexDirection:"column"
 },
+
 mediaOther:{
   height:'100%',
   width:'100%',
@@ -52,6 +62,7 @@ function ExploreBlogCard() {
   return (
     
     <div className="explore__blogCard">
+      <Link to="/individualBlog">
       <Card className={classes.cardFeature}>
         <Box className={classes.mediaFeatureOther }>
           <CardMedia 
@@ -100,6 +111,8 @@ function ExploreBlogCard() {
             </CardActions>
           </CardActionArea>
         </Card>
+      </Link>
+     
     </div>
   )
 }

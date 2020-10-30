@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import DocumentHeading from '../components/DocumentHeading';
 import FeaturedBlogCard from "../components/FeaturedBlogCard";
 import PopularBlogCard from "../components/PopularBlogCard";
 import TrendingBlogCard from "../components/TrendingBlogCard";
@@ -15,7 +16,9 @@ import Box from '@material-ui/core/Box';
 
 
 const useStyles = makeStyles((theme) => ({
-  
+  blog:{
+    display:"flex-end"
+  },
   blogContainer: {
     paddingTop: theme.spacing(3)
   },
@@ -68,6 +71,7 @@ mediaOther:{
 },
 bottom__page:{
   display:"flex",
+  alignItems:"left"
   
 },
 blog__sidebar:{
@@ -79,10 +83,10 @@ function Blog() {
   const classes = useStyles();
 
   return (
-    <div className="blog">
-      <h1>Explore Blogs</h1>
-      
+    <div className={classes.blog}>
+    
       <Box>
+      <DocumentHeading text="Explore Blogs"/>
       <Container maxwidth="lg" className={classes.blogContainer}>
         <Typography variant="h2" className={classes.blogTitle}>
           Featured
@@ -113,6 +117,7 @@ function Blog() {
           </Grid>
       </Container>
         
+<<<<<<< HEAD
       <Container maxwidth="lg" className={classes.blogContainer}>
         <Typography variant="h2" className={classes.blogTitle}>
             Trending
@@ -128,10 +133,28 @@ function Blog() {
 
             <Grid item xs={12} sm={6} md={4}>
               <TrendingBlogCard />
-            </Grid>
-            
-          </Grid>
+=======
+        <Container maxwidth="lg" className={classes.blogContainer}>
+          <Typography variant="h6" className={classes.blogTitle}>
+              Trending
+            </Typography>
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={6} md={4}>
+                <TrendingBlogCard />
+              </Grid>
 
+              <Grid item xs={12} sm={6} md={4}>
+                <TrendingBlogCard />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <TrendingBlogCard />
+              </Grid>
+              
+>>>>>>> 34dde1e3beccb5672d962e365ac6da5e74daebd8
+            </Grid>
+
+<<<<<<< HEAD
           <div className={classes.bottom__page}>
             <div className={classes.explore__blogs}>
               <Container maxwidth="lg" className={classes.blogContainer}>
@@ -160,19 +183,49 @@ function Blog() {
                 </Grid>
                 </Grid>
               </Container>
-            </div>
+=======
+            <div className={classes.bottom__page}>
+              <div className={classes.explore__blogs}>
+                <Container maxwidth="lg" className={classes.blogContainer} margin="0px">
+                <Typography variant="h6" className={classes.blogTitle}>
+                  Explore Other Blogs
+                </Typography>
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
 
-            <div className={classes.blog__sidebar}>
-              <BlogSidebar />
-            </div>
-          </div>
-          
-          
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
 
-         
-      </Container>
-      </Box>
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <ExploreBlogCard />
+                  </Grid>
+                  </Grid>
+                </Container>
+              </div>
+
+              <div className={classes.blog__sidebar}>
+                <BlogSidebar />
+              </div>
+>>>>>>> 34dde1e3beccb5672d962e365ac6da5e74daebd8
+            </div>
+            
+            
+
+          
+        </Container>
       
+      </Box>
     </div>
   );
 }

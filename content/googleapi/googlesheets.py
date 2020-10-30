@@ -12,7 +12,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 # The ID and range of a sample spreadsheet.
 SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1OI3mqi4OhZ6MQlmuNwAbQesXhIkctfc-IhRilYOtTQE/edit?usp=sharing"
 SPREADSHEET_ID = getsheetid(SPREADSHEET_URL)
-RANGE_NAME = 'Pathways!A1:M10'
+RANGE_NAME = 'Pathways!A1:F101'
 
 def getsheetdata(SPREADSHEET_ID, RANGE_NAME):
     """Shows basic usage of the Sheets API.
