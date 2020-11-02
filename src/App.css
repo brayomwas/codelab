@@ -5,16 +5,16 @@ html {
   overflow-x: hidden;
 }
 html, body {
-  font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #3a3a3a;
   background-color: rgb(255, 252, 250);
   /* overflow-x: hidden; */
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-img {border-radius: 2%;
+img {border-radius: 10px;
   /* height: 60vh;
   width: 72vw; */
 }
@@ -92,6 +92,12 @@ button:hover {
   margin-top: 50px;
 }
 
+<<<<<<< HEAD
 /* .white-bg {
   background-color: rgb(255, 250, 250);
 } */
+=======
+
+
+
+>>>>>>> 98edbf1e9add9fa6a10f12df403d84089011d8b2

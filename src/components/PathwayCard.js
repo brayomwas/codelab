@@ -13,20 +13,28 @@ import CardHeading from "./CardHeading";
 import ButtonRouter from "./Button";
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    backgroundColor: "#ffffff",
+    boxShadow: "none",
+    '&:hover': {
+      boxShadow: 'none',
+    },
   },
   media: {
-    height: 170,
+    height: 200,
+  },
+  heading: {
+    fontSize:25,
   },
   background: {
-    "&:hover": {
-      background: "none",
+      //background: "none",
       color: "#000000",
-    },
   },
   central: {
     display: "flex",
     justifyContent: "center",
+  },
+  button: {
+    marginLeft: 20,
   },
 });
 
@@ -35,7 +43,7 @@ export default function PathwayCard(props) {
   return (
     <div className="hoverable">
       <Card className={classes.root}>
-        <CardActionArea className={classes.background}>
+        {/* <CardActionArea className={classes.background}> */}
           <CardMedia
             className={classes.media}
             image={props.image}
@@ -46,7 +54,7 @@ export default function PathwayCard(props) {
               <CardHeading text={props.title} />
             </Typography>
           </CardContent>
-        </CardActionArea>
+        {/* </CardActionArea> */}
         <CardActions className={classes.central}>
           <Grid item xs={12}>
              <ButtonRouter text={props.title} buttonText={props.buttonText} linkDest={props.linkDest} link={props.link} variant='outlined'/>

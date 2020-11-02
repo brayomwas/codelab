@@ -4,14 +4,16 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from googlefileID import getdocid
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/documents.readonly']
 
 # The ID of a sample document.
-DOCUMENT_ID = '18HuNQHzKzAjZc2PL38-jZgHv3UZukLr3ZKBHb7U6gTY'
+URL = "https://docs.google.com/document/d/18HuNQHzKzAjZc2PL38-jZgHv3UZukLr3ZKBHb7U6gTY/edit?usp=sharing"
+DOCUMENT_ID = getdocid(URL)
 
-def main():
+def getdocdata(DOCUMENT_ID):
     """Shows basic usage of the Docs API.
     Prints the title of a sample document.
     """
@@ -19,8 +21,8 @@ def main():
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists('docstoken.pickle'):
+        with open('docstoken.pickle', 'rb') as token:
             creds = pickle.load(token)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
@@ -28,10 +30,10 @@ def main():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'backend/WordpressXMLRPC/credentials.json', SCOPES)
+                'content/googleapi/credentialdocs.json', SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
-        with open('token.pickle', 'wb') as token:
+        with open('docstoken.pickle', 'wb') as token:
             pickle.dump(creds, token)
 
     service = build('docs', 'v1', credentials=creds)
@@ -42,4 +44,5 @@ def main():
     print('The title of the document is: {}'.format(document.get('title')))
 
 
-main()
+if __name__ == '__main__':
+  getdocdata(DOCUMENT_ID)

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const StyledSubheading = styled.h2`
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 400;
 `;
 
 export default function Subheading(props) {

@@ -57,16 +57,33 @@ function LearningPathways({ match }) {
             </Typography>
         </Grid>
         {/* Add search bar */}
-        <Grid item> 
-          <SuggestPathway />
-        </Grid>
-        <Grid item>
-            <SearchBar 
-              value={value}
-              onChange={(newValue) => setValue(newValue)}
-              onRequestSearch={() => console.log(value)}
-              style={{disableUnderline: true}}
-            />
+        <Grid item container direction='row' xs={12} md={10}> 
+          <Grid item container direction='column'>
+            <Grid item>
+              <Typography variant='h3'>
+                  Suggest a Career Pathway!
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography>
+                Let us hear what missing pathway guide you'd love to see on Chaptr Codelab
+              </Typography>
+            </Grid>
+            <Grid item container direction='row'>
+              <Grid item xs={8}>
+                  <form className={classes.suggestionBox} noValidate autoComplete='off'>
+                    <TextField label='e.g Web Development with JavaScript' />
+                  </form>
+              </Grid>
+              <Grid item xs={3}> 
+                <ButtonRouter text='Submit' linkDest='internal' variant='contained'/> 
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item>
+
+          </Grid>
         </Grid>
         <Grid item container xs spacing={3} className={classes.mt70}>
           {/* Pathway cards */}
