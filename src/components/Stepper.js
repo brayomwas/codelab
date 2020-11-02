@@ -1,17 +1,97 @@
 import React, { useState } from 'react';
-import { Stepper, Step, StepLabel, StepContent, Typography, Paper, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import { Stepper, Step, StepLabel, StepContent, Typography, Paper, Button, Checkbox, StepConnector } from '@material-ui/core';
+import { Check } from '@material-ui/icons';
+import clsx from 'clsx';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 
+const QontoConnector = withStyles({
+    alternativeLabel: {
+        top: 10,
+        left: 'calc(-50% + 16px)',
+        right: 'calc(50% + 16px)',
+    },
+    active: {
+        '& $line': {
+            borderColor: '#784af4',
+        },
+    },
+    completed: {
+        '& $line': {
+            borderColor: '#784af4',
+        },
+    },
+    line: {
+        borderColor: '#eaeaf0',
+        borderTopWidth: 3,
+        borderRadius: 1,
+    },
+})(StepConnector);
+
+const useQontoStepIconStyles = makeStyles({
+    root: {
+        color: '#eaeaf0',
+        display: 'flex',
+        height: 22,
+        alignItems: 'center',
+    },
+    active:{
+        color: '#784af4',
+    },
+    circle: {
+        width: 8,
+        height: 8,
+        borderRadius: '50%',
+        backgroundColor: 'currentColor',
+    },
+    completed: {
+        color: '#784af4',
+        zIndex: 1,
+        fontSize: 18,
+    },
+});
+
+function QontoStepIcon(props) {
+    const classes = useQontoStepIconStyles();
+    const {  active, completed } = props;
+    // const [checked, setChecked] = useState(false);
+
+    // const handleChange = () => {
+    //     setChecked((prevState) => !prevState);
+    // }
+    return (
+        <div
+            className={clsx(classes.root, {
+                [classes.active]: active,
+            })}
+        >
+            {completed ? <Check className={classes.completed} /> :  <Checkbox checked={props.isChecked} onClick={props.handleChange} />}
+        </div>
+    );
+}
+
+QontoStepIcon.propTypes = {
+    active: PropTypes.bool,
+    completed: PropTypes.bool,
+}
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '100%',
+        width: '100%'
+    },
+    button: {
+        marginRight: theme.spacing(1),
+        marginTop: theme.spacing(1),
     },
     actionsContainer: {
-        marginBottom: theme.spacing(2),
+        marginBottom: theme.spacing(2)
     },
     resetContainer: {
         padding: theme.spacing(3),
+    },
+    instructions: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1),
     },
 }));
 
@@ -20,25 +100,27 @@ function getSteps() {
 }
 
 function getStepContent(step) {
-    switch (step) {
-        case 0: 
-            return `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, voluptas. Facilis, numquam voluptatem ut cum recusandae soluta assumenda eius eum minus autem voluptatibus vel fugit modi quo nemo at quasi officia accusantium, ipsum ipsam nulla molestiae? Maiores eligendi maxime at?`;
+    switch(step) {
+        case 0:
+            return 'Select campaign settings...';
         case 1: 
-            return `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, nisi.`;
-        case 2: 
-            return `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum expedita consequatur soluta dolorem nam repellendus blanditiis illo accusamus nostrum eligendi, non in fugiat ea officiis.`;
-        default: 
-            return `Unknown Step`;
+            return 'What is an ad group anyways?';
+        case 2:
+            return 'This is the bit I really care about';
+        default:
+            return 'Unknown step';
     }
 }
 
-export default function VerticalLinearStepper() {
+
+export default function PathwayStepper() {
     const classes = useStyles();
-    const [ activeStep, setActiveStep ] = useState(0);
+    const [activeStep, setActiveStep] = useState(1);
+    const [checked, setChecked] = useState(false);
     const steps = getSteps();
 
     const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setActiveStep((prevActiveStep) => prevActiveStep + 1)
     };
 
     const handleBack = () => {
@@ -49,29 +131,35 @@ export default function VerticalLinearStepper() {
         setActiveStep(0);
     };
 
+    const handleChange = () => {
+        setChecked((prevState) => !prevState);
+    };
+
     return (
         <div className={classes.root}>
-            <Stepper activeStep={activeStep} orientation='vertical'>
+            <Stepper nonLinear activeStep={activeStep} connector={<QontoConnector />} orientation='vertical'>
                 {steps.map((label, index) => (
                     <Step key={label}>
-                        <StepLabel>{label}</StepLabel>
+                        <StepLabel StepIconComponent={QontoStepIcon} StepIconProps={{isChecked:checked, handleChange: handleChange}}>
+                            {label}
+                        </StepLabel>
                         <StepContent>
-                            <Typography>
-                                {getStepContent(index)}
-                            </Typography>
-                            <div>
+                            <Typography>{getStepContent(index)}</Typography>
+                            <div className={classes.actionsContainer}>
                                 <div>
                                     <Button
                                         disabled={activeStep === 0}
                                         onClick={handleBack}
-                                        className={classes.button}>
-                                            Back
+                                        className={classes.button}
+                                    >
+                                        Back
                                     </Button>
-                                    <Button
+                                    <Button 
                                         variant='contained'
                                         color='primary'
                                         onClick={handleNext}
-                                        className={classes.button}>
+                                        className={classes.button}
+                                    >
                                         {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                     </Button>
                                 </div>
@@ -81,17 +169,16 @@ export default function VerticalLinearStepper() {
                 ))}
             </Stepper>
             {activeStep === steps.length && (
-                <Paper square elevation={0} className={classes.resetContainer}>
+                <Paper square elevetion={0} className={classes.resetContainer}>
                     <Typography>
-                        All steps completed
+                        All steps completed - you&apos;re finished
                     </Typography>
                     <Button onClick={handleReset} className={classes.button}>
                         Reset
                     </Button>
-                    
                 </Paper>
             )}
+            
         </div>
-    );
-
+    )
 }

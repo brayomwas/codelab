@@ -3,8 +3,9 @@ import { Grid, MenuItem, TextField, Typography, Checkbox } from '@material-ui/co
 import SearchBar from 'material-ui-search-bar';
 import DocumentHeading from '../components/DocumentHeading';
 import ML from '../images/machine-learning.jpg';
-import Stepper from '../components/Stepper';
+import PathwayStepper from '../components/Stepper';
 import MobileStepper from '../components/Progress';
+import SuggestPathway from '../components/SuggestPathway';
 export default function CodeChallenges() {
     // const [searchValue, setSearchValue] = useState('Search');
     const [checked, setChecked] = useState(true);
@@ -215,15 +216,9 @@ export default function CodeChallenges() {
                 <MobileStepper />
             </Grid>
             <Grid item >
-                <Stepper />
+                <PathwayStepper />
             </Grid>
-            <Grid item>
-                <Checkbox
-                     checked={checked}
-                     onChange={handleCheckChange}
-                     inputProps={{'aria-label': 'primary checkbox'}}
-                     />
-            </Grid>
+            <SuggestPathway />
             
         </Grid>
     )

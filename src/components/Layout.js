@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import { Grid, Drawer, AppBar, Toolbar, CssBaseline, Typography, Divider, IconButton, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Menu, MoveToInbox, Mail, ChevronRight, ChevronLeft } from '@material-ui/icons';
+import { Menu, Home, Code, ChevronLeft, Whatshot } from '@material-ui/icons';
 import DocumentHeading from './DocumentHeading';
 import Footer from './Footer';
-import SearchBar from 'material-ui-search-bar';
+import { ReacComponent as Flame } from '../images/tinder.svg';
+// import SearchBar from 'material-ui-search-bar';
+import TopBar from './TopBar';
+import { Link } from 'react-router-dom';
 // import Nav from './Nav';
 // import SideBar from './SideBar';
 
@@ -14,22 +17,6 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-    },
-    appBar: {
-        zIndex: theme.zIndex.drawer + 1,
-        transition: theme.transitions.create(['width', 'margin'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        background: '#ffffff'
-    },
-    appBarShift: {
-        marginLeft: drawerWidth,
-        width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['width', 'margin'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
     },
     menuButton: {
         marginRight: 36,
@@ -60,75 +47,70 @@ const useStyles = makeStyles((theme) => ({
             width: theme.spacing(9) + 1,
         },
     },
-    paper: {
-        background: '#011638',
-    },
     toolbar: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
         padding: theme.spacing(0, 1),
-        ...theme.mixins.toolbar,
-    },
-    title: {
-        color: theme.palette.primary.main
-    },
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-    },
+        ...theme.mixins.toolbar
+    }
 }));
+
 export default function Layout({children}) {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = useState(false);
-    const [searchValue, setSearchValue] = useState('Search');
-    
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
+    const menuItems = [
+        {
+            name: 'Home',
+            icon: <Home />,
+            path:'/'
+        },
+        {
+            name: 'Peer Codelab',
+            icon: <Whatshot />,
+            path: '/codelab'
+        },
+        {
+            name: 'Pathways',
+            icon: <Code />,
+            path: '/pathways'
+        },
+        {
+            name: 'Code Challenges',
+            icon: <Code />,
+            path: '/codeChallenges'
+        }
+    ];
 
+    // const handleDrawerOpen = () => {
+    //     setOpen(true);
+    // }
+
+    // const handleDrawerClose = () => {
+    //     setOpen(false);
+    // }
+
+    const toggleDrawer = () => {
+        open === true ? setOpen(false) : setOpen(true)
+    }
     return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <AppBar
-                position='fixed'
-                className={clsx(classes.appBar, {
-                    [classes.appBarShift]: open,
-                })}
-            >
+        <>
+            {/* <IconButton edge='start' aria-label='menu' onClick={handleDrawerOpen}>
+                <Menu />
+            </IconButton> */}
+            {/* <AppBar position='static'>
                 <Toolbar>
-                    <IconButton
-                        color='inherit'
-                        aria-label='open drawer'
-                        onClick={handleDrawerOpen}
-                        edge='start'
-                        className={clsx(classes.menuButton, {
-                            [classes.hide]: open,
-                        })}
-                    >
-                        <Menu color='primary'/>
-                    </IconButton>
-                    {/* <Typography variant='h5' noWrap className={classes.title}>
-                         <DocumentHeading text='Code Challenges'/> 
-                          Code Challenges
-                    </Typography> */}
-                    <Grid item xs={8}>
-                        <SearchBar
-                            value={searchValue}
-                            onChange={() => setSearchValue('')}
-                            onRequestSearch={() => alert('Searching')}
-                        />
-                    </Grid>
+                    <Typography>
+                        News
+                    </Typography>
                 </Toolbar>
-            </AppBar>
-            <Drawer
+            </AppBar> */}
+            <TopBar />
+             <Drawer
                 variant='permanent'
-                className={classes.paper, clsx(classes.drawer, {
+                className={clsx(classes.drawer, {
                     [classes.drawerOpen]: open,
                     [classes.drawerClose]: !open,
                 })}
@@ -136,32 +118,36 @@ export default function Layout({children}) {
                     paper: clsx({
                         [classes.drawerOpen]: open,
                         [classes.drawerClose]: !open,
-
                     }),
                 }}
-            >
-                <div className={classes.toolbar}>
-                    <IconButton onClick={handleDrawerClose}>
+             >
+                 <div className={classes.toolbar}>
+                 <IconButton edge='start' aria-label='menu' onClick={toggleDrawer}>
+                    {open ? <ChevronLeft /> : <Menu />}
+                </IconButton>   
+                    {/* <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRight /> : <ChevronLeft />}
-                    </IconButton>
-                </div>
-                <Divider />
-                <List>
-                    {['Pathways', 'Courses', 'Match & Code'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <MoveToInbox /> : <Mail />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))
-                    }
-                </List>
-            </Drawer>
-            <main className={classes.content}>
-                <div className={classes.toolbar} />
+                    </IconButton> */}
+                 </div>
+                 <Divider />
+                 <List>
+                     {menuItems.map((item) => (
+                         <Link to={item.path} key={item.name}>
+                            <ListItem button >
+                                <ListItemIcon>
+                                    {item.icon}
+                                </ListItemIcon>
+                                <ListItemText primary={item.name} />
+                            </ListItem>
+                         </Link>
+                         
+                     ))}
+                 </List>
+             </Drawer>
+             <div className='container'>
                 {children}
-            </main>
-        </div>
+             </div>
+            
+        </>
     )
 }
