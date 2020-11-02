@@ -6,6 +6,7 @@ import {
   CardContent,
   CardMedia,
   Typography,
+  Grid
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CardHeading from "./CardHeading";
@@ -47,7 +48,10 @@ export default function PathwayCard(props) {
           </CardContent>
         </CardActionArea>
         <CardActions className={classes.central}>
-          <ButtonRouter text={props.title} buttonText={props.buttonText} linkDest={props.linkDest} link={props.link} variant='outlined'/>
+          <Grid item xs={12}>
+             <ButtonRouter text={props.title} buttonText={props.buttonText} linkDest={props.linkDest} link={props.link} variant='outlined'/>
+          </Grid>
+          
         </CardActions>
       </Card>
     </div>

@@ -1,6 +1,7 @@
 import React from 'react'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import { ArrowBack } from '@material-ui/icons';
 import Image from 'material-ui-image';
 import DocumentHeading from '../components/DocumentHeading'
 import PathwayNav from '../components/PathwayNav'
@@ -9,7 +10,9 @@ import Subheading from '../components/DocumentSubheading'
 // import StepCard from '../components/StepCard'
 // import SimpleList from '../components/SimpleList'
 import StepAccordion from '../components/StepAccordion'
+import Progress from '../components/Progress';
 import pathways from '../data/pathways.json'
+import VerticalLinearStepper from '../components/Stepper';
 
 
 const useStyles = makeStyles({
@@ -26,19 +29,58 @@ export default function IndividualPathway(props) {
     
     const classes = useStyles();
 
-    let accordion = [];
-
-    for (let i = 0; i < individualPathway.data.length; i++) {
-        accordion.push(<StepAccordion
-            summary={individualPathway.data[i].pathwayModule}
-            description={individualPathway.data[i].description}
-            step={i + 1}
-            />)
-    }
+    let steps = [];
+    
+    // for (let i = 0; i < individualPathway.data.length; i++) {
+    //     accordion.push(<StepAccordion
+    //         summary={individualPathway.data[i].pathwayModule}
+    //         description={individualPathway.data[i].description}
+    //         step={i + 1}
+    //         />)
+    // }
 
     return(
-        <Grid container spacing={3}>
-            <Grid item container xs direction='column'spacing={2}>
+        <Grid container spacing={3} direction='column'>
+            <Grid item>
+                <Button color='primary'><ArrowBack />Back to Career Pathways</Button>
+            </Grid>
+
+            <Grid item>
+                 <Typography>
+                    {<DocumentHeading text={individualPathway.pathway} />}
+                 </Typography>
+            </Grid>
+
+            <Grid item>
+                <Typography>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, aliquid.
+                </Typography>
+            </Grid>
+
+            <Grid item xs={10}>
+                <Typography variant='p'>
+                    1 out of 6 steps completed
+                </Typography>
+                <Progress />
+            </Grid>
+            
+            <Grid>
+                <VerticalLinearStepper pathwayData={individualPathway.data}/>
+            </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* <Grid item container xs direction='column'spacing={2}>
                 <Grid item>
                     <Typography>
                         {<DocumentHeading text={individualPathway.pathway} />}
@@ -48,15 +90,12 @@ export default function IndividualPathway(props) {
                     <PathwayNav />
                 </Grid>
                 <Grid item xs>
-                    {/* <Image src={MLImage} imageStyle={{height: '100vh'}} /> */}
+                    <Image src={MLImage} imageStyle={{height: '100vh'}} />
                     <img src={MLImage} alt='Image' />
                 </Grid>
-                {/* <Grid item xs >
-                   <Subheading text='Steps' />
-                    
-                </Grid> */}
+                
                 <Grid item xs={12} sm={10} >
-                    {/* Steps accordion */}
+                    
                     <Typography variant='h4'>
                         <Subheading text='Steps' />
                     </Typography>
@@ -66,7 +105,7 @@ export default function IndividualPathway(props) {
                 <Grid item xs={12} md={10}>
                     
                 </Grid>
-            </Grid>
+            </Grid> */}
         </Grid>
     
     )

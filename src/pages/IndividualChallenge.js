@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme)=>({
     maxWidth: "100%",
   },
 
-  challengeDescription:{
+  challengeDescription:{ 
     height:"500px",
     overflowY:"scroll",
     padding:"20px",

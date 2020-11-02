@@ -7,6 +7,7 @@ html {
 html, body {
   font-family: 'Alegreya Sans', sans-serif;
   color: #3a3a3a;
+  background-color: rgb(255, 252, 250);
   /* overflow-x: hidden; */
 }
 h1, h2, h3, h4, h5, h6 {
@@ -18,7 +19,10 @@ img {border-radius: 2%;
   width: 72vw; */
 }
  .container {
-  width: 85% !important;
+   margin: 20px 140px;
+   
+   /* width: 100%; */
+  width: 80% !important;
 } 
 .app-bar {
   z-index: 1250 !important;
@@ -84,6 +88,10 @@ button:hover {
   flex: 1 0 33%;
 }
 
+.mt-50 {
+  margin-top: 50px;
+}
 
-
-
+/* .white-bg {
+  background-color: rgb(255, 250, 250);
+} */

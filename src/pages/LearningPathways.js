@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { Grid, Typography, TextField } from "@material-ui/core";
 import { LibraryAdd } from '@material-ui/icons';
@@ -8,7 +8,8 @@ import DocumentHeading from "../components/DocumentHeading";
 import ButtonRouter from '../components/Button';
 import pathways from "../data/pathways.json";
 import Image from "../images/machine-learning.jpg";
-
+import SuggestPathway from "../components/SuggestPathway";
+import SearchBar from 'material-ui-search-bar';
 const useStyles = makeStyles((theme) => ({
     mt70: {
         marginTop: '50px'
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 function LearningPathways({ match }) {
     const classes = useStyles();
+    const [value, setValue] = useState('');
 
     const allPathways = pathways.map((pathway) => {
       let pathwayObj = { ...pathway };
@@ -40,7 +42,7 @@ function LearningPathways({ match }) {
 
   return (
     <Grid container spacing={3}>
-      <Grid item container xs direction="column">
+      <Grid item container xs direction="column" spacing={3}>
         <Grid item xs>
           {/* Pathway Name */}
           <Typography>
@@ -55,35 +57,17 @@ function LearningPathways({ match }) {
             </Typography>
         </Grid>
         {/* Add search bar */}
-        <Grid item container direction='row' xs={12} md={10}> 
-          <Grid item container direction='column'>
-            <Grid item>
-              <Typography variant='h4'>
-                  Suggest a Career Pathway!
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography>
-                Let us hear what missing pathway guide you'd love to see on Chaptr Codelab
-              </Typography>
-            </Grid>
-            <Grid item container direction='row'>
-              <Grid item xs={8}>
-                  <form className={classes.suggestionBox} noValidate autoComplete='off'>
-                    <TextField label='e.g Web Development with JavaScript' />
-                  </form>
-              </Grid>
-              <Grid item xs={3}> 
-                <ButtonRouter text='Submit' linkDest='internal' variant='contained'/> 
-              </Grid>
-            </Grid>
-          </Grid>
-
-          <Grid item>
-
-          </Grid>
+        <Grid item> 
+          <SuggestPathway />
         </Grid>
-
+        <Grid item>
+            <SearchBar 
+              value={value}
+              onChange={(newValue) => setValue(newValue)}
+              onRequestSearch={() => console.log(value)}
+              style={{disableUnderline: true}}
+            />
+        </Grid>
         <Grid item container xs spacing={3} className={classes.mt70}>
           {/* Pathway cards */}
           {rows}
