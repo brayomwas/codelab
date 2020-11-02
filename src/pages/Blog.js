@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth:"100%"
   },
   media:{
-    height:240
+    height:100
   },
   cardActions:{
     display:"flex",
@@ -88,7 +88,7 @@ function Blog() {
       <Box>
       <DocumentHeading text="Explore Blogs"/>
       <Container maxwidth="lg" className={classes.blogContainer}>
-        <Typography variant="h6" className={classes.blogTitle}>
+        <Typography variant="h2" className={classes.blogTitle}>
           Featured
         </Typography>
           <Grid container spacing={3}>
@@ -103,7 +103,7 @@ function Blog() {
       </Container>
       
       <Container maxwidth="lg" className={classes.blogContainer}>
-        <Typography variant="h6" className={classes.blogTitle}>
+        <Typography variant="h2" className={classes.blogTitle}>
             Popular
         </Typography>
           <Grid container spacing={3}>
@@ -117,6 +117,23 @@ function Blog() {
           </Grid>
       </Container>
         
+<<<<<<< HEAD
+      <Container maxwidth="lg" className={classes.blogContainer}>
+        <Typography variant="h2" className={classes.blogTitle}>
+            Trending
+          </Typography>
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6} md={4}>
+              <TrendingBlogCard />
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={4}>
+              <TrendingBlogCard />
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={4}>
+              <TrendingBlogCard />
+=======
         <Container maxwidth="lg" className={classes.blogContainer}>
           <Typography variant="h6" className={classes.blogTitle}>
               Trending
@@ -134,8 +151,39 @@ function Blog() {
                 <TrendingBlogCard />
               </Grid>
               
+>>>>>>> 34dde1e3beccb5672d962e365ac6da5e74daebd8
             </Grid>
 
+<<<<<<< HEAD
+          <div className={classes.bottom__page}>
+            <div className={classes.explore__blogs}>
+              <Container maxwidth="lg" className={classes.blogContainer}>
+              <Typography variant="h2" className={classes.blogTitle}>
+                Explore Other Blogs
+              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <ExploreBlogCard />
+                </Grid>
+                </Grid>
+              </Container>
+=======
             <div className={classes.bottom__page}>
               <div className={classes.explore__blogs}>
                 <Container maxwidth="lg" className={classes.blogContainer} margin="0px">
@@ -169,6 +217,7 @@ function Blog() {
               <div className={classes.blog__sidebar}>
                 <BlogSidebar />
               </div>
+>>>>>>> 34dde1e3beccb5672d962e365ac6da5e74daebd8
             </div>
             
             

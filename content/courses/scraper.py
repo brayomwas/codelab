@@ -241,5 +241,3 @@ df_courses = df_courses.rename(columns=col_dict)
 
 #Export courses scraped into a JSON File
 df_courses.to_json(path_or_buf="courses.json", orient="split")
-
-

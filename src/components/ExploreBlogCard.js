@@ -15,13 +15,21 @@ import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    border: 0
+  },
   cardFeature:{
+<<<<<<< HEAD
+    background: 'transparent',
+    display:"flex"
+=======
     display:"flex",
     maxWidth:"100%",
+>>>>>>> 34dde1e3beccb5672d962e365ac6da5e74daebd8
   },
   cardActions:{
     display:"flex",
-    margin:"0 0 10px",
+    margin:"0 0 0px",
     justifyContent:"space-between"
   },
   author:{
@@ -34,8 +42,9 @@ const useStyles = makeStyles((theme) => ({
 },
 
 mediaOther:{
-  height:150,
-  width:150
+  height:'100%',
+  width:'100%',
+  borderRadius: 0
 },
   contentFeature:{
     alignContent:"right",
