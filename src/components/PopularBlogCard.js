@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth:"100%"
   },
   media:{
-    height:240
+    height:240,
+    borderRadius: 0,
   },
   cardActions:{
     display:"flex",
@@ -26,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent:"space-between"
   },
   author:{
-    display:"flex"
+    display:"flex",
+    paddingLeft: '10px'
   },
 }));
 
@@ -36,8 +38,8 @@ function PopularBlogCard() {
   return (
     <div className="popular__blogCard">
       <Link to="/individualBlog">
-      <Card className={classes.card}>
-        <CardActionArea>
+      <Card className={classes.card} variant='outlined'>
+        {/* <CardActionArea> */}
           <CardMedia className={classes.media}
             component="img"
             alt="Contemplative Reptile"
@@ -46,15 +48,15 @@ function PopularBlogCard() {
             ib=rb-1.2.1&auto=format&fit=crop&w=1423&q=80"
           />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Top 10 Javascript Libraries
+                      <Typography gutterBottom variant="h3" component="h2">
+                        Python Resources – Explore Pathways and Best Learning Resources 2020
                       </Typography>
                       <Typography variant="body2" color="textSecondary" component="p">
                         Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                         across all continents except Antarctica
                       </Typography>
                     </CardContent>
-                  </CardActionArea>
+                  {/* </CardActionArea> */}
                   <CardActions className={classes.cardActions}>
                     <Box className={classes.author}>
                       <Avatar 

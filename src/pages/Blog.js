@@ -114,7 +114,7 @@ function Blog() {
       </Container>
         
         <Container maxwidth="lg" className={classes.blogContainer}>
-          <Typography variant="h6" className={classes.blogTitle}>
+          <Typography variant="h2" className={classes.blogTitle}>
               Trending
             </Typography>
             <Grid container spacing={3}>
@@ -135,8 +135,8 @@ function Blog() {
             <div className={classes.bottom__page}>
               <div className={classes.explore__blogs}>
                 <Container maxwidth="lg" className={classes.blogContainer} margin="0px">
-                <Typography variant="h6" className={classes.blogTitle}>
-                  Explore Other Blogs
+                <Typography variant="h2" className={classes.blogTitle}>
+                  Explore More
                 </Typography>
                 <Grid container spacing={3}>
                   <Grid item xs={12}>

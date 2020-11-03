@@ -16,8 +16,8 @@ def wpclient(username, password, domain="box5880.temp.domains/~chaptrgl/codelab"
   return wp
 
 
-def postwpchallenge(title, content, tags, categories, type = "challenge"):
-  #title (string), content (string/html), tags (list), categories (list), type (string)
+def postwpchallenge(title, content, tags, categories, wp, type = "challenge"):
+  #title (string), content (string/html), tags (list), categories (list), wp (Client Class), type (string)
 
   post = WordPressPost()
   post.post_type = type

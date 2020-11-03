@@ -14,10 +14,17 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   card:{
-    maxWidth:"100%"
+    maxWidth:"100%",
   },
   media:{
-    height:240
+    height:240,
+    borderRadius: 0,
+    
+  },
+  noHover: {
+    '&: hover': {
+      backgroundColor: 'transparent'
+    },
   },
   cardActions:{
     display:"flex",
@@ -25,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent:"space-between"
   },
   author:{
-    display:"flex"
+    display:"flex",
+    paddingLeft: '10px'
   },
 }));
 
@@ -35,8 +43,8 @@ function TrendingBlogCard() {
   return (
     <div className="trending__blogCard">
       <Link to="/individualBlog">
-        <Card className={classes.card}>
-          <CardActionArea>
+        <Card className={classes.card} variant='outlined'>
+          {/* <CardActionArea className={classes.noHover}> */}
             <CardMedia className={classes.media}
               component="img"
               alt="Contemplative Reptile"
@@ -45,7 +53,7 @@ function TrendingBlogCard() {
               id=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h3" component="h2">
                   Top 10 Javascript Libraries
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -53,7 +61,7 @@ function TrendingBlogCard() {
                   across all continents except Antarctica
                 </Typography>
               </CardContent>
-            </CardActionArea>
+            {/* </CardActionArea> */}
             <CardActions className={classes.cardActions}>
             <Box className={classes.author}>
               <Avatar 

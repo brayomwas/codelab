@@ -11,7 +11,7 @@ username = input("Enter your username: ")
 password = input("Enter your password: ")
 
 domain="box5880.temp.domains/~chaptrgl/codelab" # If different: domain = input(" Enter your Wordpress Website Domain(e.g. example.com): ")'''
-wp = wpclient(username, password) #pass domain argument if different from the stated box5880...
+wp = wpclient(username, password) #pass domain argument if different from the stated
 
 ## Import Project Euler Algorithm Problems
 start = int(input("From what problem/challenge would you like to start: "))
@@ -35,6 +35,6 @@ for i in range(len(challenges)):
   tags = ["project euler", "algorithms"]
   categories = ["General Python", "Data Algorithms"]
 
-  postwpchallenge(title, content, tags, categories)
+  postwpchallenge(title, content, tags, categories, wp)
 
-print("Total Challenges Added: ", count)"""
+print("Total Challenges Added: ", count)

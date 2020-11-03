@@ -6,13 +6,6 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googlefileID import getsheetid
 
-# If modifying these scopes, delete the file token.pickle.
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-
-# The ID and range of a sample spreadsheet.
-SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1OI3mqi4OhZ6MQlmuNwAbQesXhIkctfc-IhRilYOtTQE/edit?usp=sharing"
-SPREADSHEET_ID = getsheetid(SPREADSHEET_URL)
-RANGE_NAME = 'Pathways!A1:F101'
 
 def getsheetdata(SPREADSHEET_ID, RANGE_NAME):
     """Shows basic usage of the Sheets API.
@@ -41,18 +34,27 @@ def getsheetdata(SPREADSHEET_ID, RANGE_NAME):
 
     # Call the Sheets API
     sheet = service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID,
-                                range=RANGE_NAME).execute()
+    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=RANGE_NAME).execute()
     values = result.get('values', [])
 
     if not values:
         print('No data found.')
-    else:
-        rows = sheet.values().get(spreadsheetId=SPREADSHEET_ID,
-                                  range=RANGE_NAME).execute()
-        data = rows.get('values')
-        print("COMPLETE: Data copied")
-        print(data)
 
-if __name__ == '__main__':
-    getsheetdata(SPREADSHEET_ID, RANGE_NAME)
+    else:
+        rows = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=RANGE_NAME).execute()
+        data = rows.get('values')
+        
+        return data
+
+
+# If modifying these scopes, delete the file token.pickle.
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+
+# Enter the URL and range of a sample spreadsheet and get data
+'''SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1OI3mqi4OhZ6MQlmuNwAbQesXhIkctfc-IhRilYOtTQE/edit?usp=sharing"
+RANGE_NAME = 'Pathways!A1:F101'
+
+SPREADSHEET_ID = getsheetid(SPREADSHEET_URL)
+data = getsheetdata(SPREADSHEET_ID, RANGE_NAME)
+
+print(data)'''
