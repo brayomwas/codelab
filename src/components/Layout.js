@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'flex-end',
         padding: theme.spacing(0, 1),
         ...theme.mixins.toolbar
+    },
+    iconSize: {
+        fontSize: 66,
     }
 }));
 
