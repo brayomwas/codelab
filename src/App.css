@@ -18,9 +18,8 @@ img {border-radius: 10px;
   /* height: 60vh;
   width: 72vw; */
 }
- .container {
+.container {
    margin: 20px 140px;
-   
    /* width: 100%; */
   width: 80% !important;
 } 
@@ -92,6 +91,12 @@ button:hover {
   margin-top: 50px;
 }
 
+<<<<<<< HEAD
 /* .white-bg {
   background-color: rgb(255, 250, 250);
 } */
+=======
+
+
+
+>>>>>>> e11f20c8d489e9008a583f548ee04ba62b9bc696

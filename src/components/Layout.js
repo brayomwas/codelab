@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import { Grid, Drawer, AppBar, Toolbar, CssBaseline, Typography, Divider, IconButton, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Menu, Home, Code, ChevronLeft, Whatshot } from '@material-ui/icons';
+import { Menu, Home, Code, ChevronLeft, Whatshot, Queue, Explore } from '@material-ui/icons';
 import DocumentHeading from './DocumentHeading';
 import Footer from './Footer';
 import { ReacComponent as Flame } from '../images/tinder.svg';
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     menuButton: {
-        marginRight: 36,
+        marginLeft: 1000,
     },
     hide: {
         display: 'none',
@@ -54,8 +54,8 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(0, 1),
         ...theme.mixins.toolbar
     },
-    iconSize: {
-        fontSize: 66,
+    icon: {
+      fontSize: 30
     }
 }));
 
@@ -67,24 +67,29 @@ export default function Layout({children}) {
     const menuItems = [
         {
             name: 'Home',
-            icon: <Home />,
+            icon: <Home className = {classes.icon}/>,
             path:'/'
         },
         {
-            name: 'Peer Codelab',
-            icon: <Whatshot />,
+            name: 'Codelab',
+            icon: <Whatshot className = {classes.icon}/>,
             path: '/codelab'
         },
         {
+          name: 'Challenges',
+          icon: <Code className = {classes.icon}/>,
+          path: '/codeChallenges'
+      },
+        {
             name: 'Pathways',
-            icon: <Code />,
+            icon: <Queue className = {classes.icon}/>,
             path: '/pathways'
         },
         {
-            name: 'Code Challenges',
-            icon: <Code />,
-            path: '/codeChallenges'
-        }
+          name: 'Blog',
+          icon: <Explore className = {classes.icon}/>,
+          path: '/codeChallenges'
+      }
     ];
 
     // const handleDrawerOpen = () => {
@@ -126,13 +131,14 @@ export default function Layout({children}) {
              >
                  <div className={classes.toolbar}>
                  <IconButton edge='start' aria-label='menu' onClick={toggleDrawer}>
-                    {open ? <ChevronLeft /> : <Menu />}
+                    {open ? <ChevronLeft /> : <Menu className={classes.menuButton} />}
                 </IconButton>   
                     {/* <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRight /> : <ChevronLeft />}
                     </IconButton> */}
                  </div>
                  <Divider />
+
                  <List>
                      {menuItems.map((item) => (
                          <Link to={item.path} key={item.name}>
