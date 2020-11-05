@@ -1,7 +1,7 @@
 import os, sys
-from projecteuler import *
-sys.path.insert(1,'content/wordpress')
-from postchallenge import *
+from projecteulerscraper import *
+sys.path.insert(1,'content')
+from wppostchallenge import *
 
 
 #Import Euler Algorithm Problems and Export to WordPress
