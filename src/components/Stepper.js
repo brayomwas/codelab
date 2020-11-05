@@ -4,6 +4,8 @@ import { Stepper, Step, StepLabel, StepContent, Typography, Paper, Button, Check
 import { Check } from '@material-ui/icons';
 import clsx from 'clsx';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import PathwayCard from './PathwayCard';
+import courses from '../data/courses.json';
 
 const QontoConnector = withStyles({
     alternativeLabel: {
@@ -95,29 +97,24 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function getSteps() {
-    return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
-}
-
-function getStepContent(step) {
-    switch(step) {
-        case 0:
-            return 'Select campaign settings...';
-        case 1: 
-            return 'What is an ad group anyways?';
-        case 2:
-            return 'This is the bit I really care about';
-        default:
-            return 'Unknown step';
-    }
-}
 
 
-export default function PathwayStepper() {
+
+
+
+export default function PathwayStepper(props) {
     const classes = useStyles();
     const [activeStep, setActiveStep] = useState(1);
     const [checked, setChecked] = useState(false);
     const steps = getSteps();
+
+    function getSteps() {
+        return props.pathwayData.map((step) => step.pathwayModule);
+    }
+
+    function getStepContent(step) {
+        return props.pathwayData.map((step) => step.description)[step]
+    }
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1)
@@ -145,6 +142,9 @@ export default function PathwayStepper() {
                         </StepLabel>
                         <StepContent>
                             <Typography>{getStepContent(index)}</Typography>
+                            <div>
+                                {/* {courses.data.filter((course) => course[3] === label)} */}
+                            </div>
                             <div className={classes.actionsContainer}>
                                 <div>
                                     <Button
