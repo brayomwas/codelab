@@ -1,6 +1,6 @@
 import sys, os
 import pandas as pd
-sys.path.insert(1,'content/googleapi')
+sys.path.insert(1,'content')
 from googlesheets import getsheetdata
 from googlefileID import getsheetid
 
