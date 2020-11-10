@@ -19,13 +19,10 @@ const useStyles = makeStyles((theme) => ({
     border: 0
   },
   cardFeature:{
-<<<<<<< HEAD
     background: 'transparent',
-    display:"flex"
-=======
+    // display:"flex"
     display:"flex",
     maxWidth:"100%",
->>>>>>> 34dde1e3beccb5672d962e365ac6da5e74daebd8
   },
   cardActions:{
     display:"flex",
