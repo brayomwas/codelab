@@ -7,7 +7,7 @@ html {
 html, body {
   font-family: 'Open Sans', sans-serif;
   color: #3a3a3a;
-  background-color: rgb(255, 252, 250);
+  /* background-color: rgb(255, 252, 250); */
   /* overflow-x: hidden; */
 }
 h1, h2, h3, h4, h5, h6 {
@@ -91,12 +91,6 @@ button:hover {
   margin-top: 50px;
 }
 
-<<<<<<< HEAD
 /* .white-bg {
   background-color: rgb(255, 250, 250);
 } */
-=======
-
-
-
->>>>>>> e11f20c8d489e9008a583f548ee04ba62b9bc696

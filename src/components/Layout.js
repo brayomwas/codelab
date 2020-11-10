@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
         ...theme.mixins.toolbar
     },
     icon: {
-      fontSize: 30
+      fontSize: 25
     }
 }));
 

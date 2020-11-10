@@ -9,19 +9,23 @@ const LinkBehavior = React.forwardRef((props, ref) => (
   <RouterLink ref={ref} {...props} />
 ));
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   button: {
     display: "flex",
     justifyContent: "center",
-    background: "#3366cc",
+    // background: "#3366cc",
+    // '&:hover': {
+    //   background: "#011638",
+    // },
+    background: theme.palette.primary.main,
     '&:hover': {
-      background: "#011638",
+        background: theme.palette.secondary.main,
     },
     paddingBottom: 10,
     paddingTop: 10,
     color: '#fff',
   },
-});
+}));
 
 function ButtonRouter(props) {
   const classes = useStyles();
@@ -34,7 +38,7 @@ function ButtonRouter(props) {
           <div>
             <Button
               variant={props.variant}
-              //color="primary"
+              color="primary"
               className={classes.button}
               component={LinkBehavior}
               to={ `${props.match.url}/${props.text}`}

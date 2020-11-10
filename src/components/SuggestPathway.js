@@ -5,7 +5,8 @@ import { Grade } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: 200
+        height: 200,
+        padding: '30px'
     },
     rootForm: {
         padding: '2px 4px',
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SuggestPathway() {
     const classes = useStyles();
     return (
-        <Paper elevation={2} className={classes.root}>
+        <Paper elevation={0} className={classes.root} variant='outlined'>
             <Grid container direction='row' spacing={2} alignItems='center'>
                 <Grid item container direction='column' spacing={3} xs={10} justify='center'>
                     <Grid item>

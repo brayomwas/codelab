@@ -19,12 +19,6 @@ export default function Filter(props) {
                         {menuItem}
                     </MenuItem>
                 ))}
-                {/* <MenuItem value='Python'>
-                    Python
-                </MenuItem>
-                <MenuItem value='Javascript'>
-                    Javascript
-                </MenuItem> */}
             </Select>
         </FormControl>
     )
