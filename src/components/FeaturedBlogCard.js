@@ -22,8 +22,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection:"column"
   },
   mediaImg:{
-    height:300,
-    width:350 
+    width:500,
+    height:500,
+    borderRadius: 0
   },
   contentFeature:{
     alignContent:"right",

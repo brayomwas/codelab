@@ -46,6 +46,11 @@ const theme = createMuiTheme({
         secondary: {
             main: '#011638'
         }
+    },
+    props: {
+      MuiCard: {
+        elevation: 0
+      }
     }
 });
 

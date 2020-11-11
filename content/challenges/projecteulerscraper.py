@@ -48,18 +48,23 @@ def geteulerlinks(start, finish, links = list(), base = "https://projecteuler.ne
   return links
 
 
-links = geteulerlinks(1, 10)
-content = list()
+def geteulerchallenge(links, content=list()):
+  "Scrape euler challenges content and save into a list"
+  
+  for url in links:
+    #Scrape individual challenge pages to get title and description
+    soup = getsoup(url)
+    title = geteulertitle(soup)
+    description = geteulerdescription(soup)
 
-for url in links:
-  soup = getsoup(url)
-  title = geteulertitle(soup)
-  description = geteulerdescription(soup)
+    content.append([title, description])
 
-  content.append([title, description])
+  return content
 
-for i in content:
-  if len(i) == 2:
-    print(i)
-  else:
-    pass
+
+"""start = int(input("From what problem/challenge would you like to start: "))
+finish = int(input("At what problem/challenge would you like to finish: "))
+
+challenges = geteulerchallenge(geteulerlinks(start, finish))
+
+print(challenges)"""

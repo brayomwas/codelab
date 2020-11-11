@@ -171,7 +171,8 @@ export default function TopBar() {
                             onChange={(newValue) => setValue(newValue)}
                             onRequestSearch={() => console.log(value)}
                             // style={{disableUnderline: true}}
-                            disableUnderline
+                           
+
                         />
                     </div>
                     <div className={classes.grow} />

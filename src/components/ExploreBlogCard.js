@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
+import Grid from '@material-ui/core/Grid';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import { Link } from 'react-router-dom';
 
@@ -19,8 +20,6 @@ const useStyles = makeStyles((theme) => ({
     border: 0
   },
   cardFeature:{
-    background: 'transparent',
-    // display:"flex"
     display:"flex",
     maxWidth:"100%",
   },
@@ -30,28 +29,29 @@ const useStyles = makeStyles((theme) => ({
     justifyContent:"space-between"
   },
   author:{
-    display:"flex"
+    display:"flex",
+    paddingLeft: '10px'
   },
   mediaFeatureOther:{ 
-  maxWidth:"50%",
-  display:"flex",
-  flexDirection:"column"
-},
-
-mediaOther:{
-  height:'100%',
-  width:'100%',
-  borderRadius: 0
-},
-  contentFeature:{
-    alignContent:"right",
-    alignItems:"right",
+    maxWidth: '20%',
     display:"flex",
-    flexDirection:"column",
-    justifyContent:"right"
-
+    flexDirection:"column"
   },
-}));
+  mediaOther:{
+    height:'150px',
+    width:'150px',
+    borderRadius: 0,
+    marginRight: '30px'
+  },
+    contentFeature:{
+      alignContent:"right",
+      alignItems:"right",
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"right"
+
+    },
+  }));
 
 function ExploreBlogCard() {
   const classes = useStyles();
@@ -71,11 +71,11 @@ function ExploreBlogCard() {
             ib=rb-1.2.1&auto=format&fit=crop&w=1423&q=80"
           />
         </Box>
-        <CardActionArea>
+        {/* <CardActionArea> */}
           <CardContent>
             <Box className={classes.contentFeature}>
-              <Typography gutterBottom variant="h5" component="h2">
-                Top 10 Javascript Libraries
+              <Typography gutterBottom variant="h3" component="h2">
+              Python Resources – Explore Pathways and Best Learning Resources 2020
               </Typography>
               <Typography 
                 variant="body2" 
@@ -106,7 +106,7 @@ function ExploreBlogCard() {
                 </Box>
               </Box>
             </CardActions>
-          </CardActionArea>
+          {/* </CardActionArea> */}
         </Card>
       </Link>
      

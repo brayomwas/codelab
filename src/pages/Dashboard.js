@@ -17,6 +17,17 @@ function Dashboard() {
       <DocumentHeading text="Welcome back, Cabral" />
       <div className={classes.dashboard__main}>
         <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
       </div>
 
       <div className={classes.dashboard__sidebar}>

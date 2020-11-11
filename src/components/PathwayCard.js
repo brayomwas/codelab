@@ -57,7 +57,7 @@ export default function PathwayCard(props) {
         {/* </CardActionArea> */}
         <CardActions className={classes.central}>
           <Grid item xs={12}>
-             <ButtonRouter text={props.title} buttonText={props.buttonText} linkDest={props.linkDest} link={props.link} variant='outlined'/>
+             <ButtonRouter text={props.title} buttonText={props.buttonText} linkDest={props.linkDest} link={props.link} />
           </Grid>
           
         </CardActions>

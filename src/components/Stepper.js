@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Stepper, Step, StepLabel, StepContent, Typography, Paper, Button, Checkbox, StepConnector } from '@material-ui/core';
+import { Stepper, Step, StepLabel, StepContent, Typography, Paper, Button, Checkbox, StepConnector, Grid } from '@material-ui/core';
 import { Check } from '@material-ui/icons';
 import clsx from 'clsx';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import PathwayCard from './PathwayCard';
+import courses from '../data/courses.json';
+import Udemy from '../images/Udemy Banner.png';
+import Coursera from '../images/Coursera Banner.jpg';
 
 const QontoConnector = withStyles({
     alternativeLabel: {
@@ -65,7 +69,7 @@ function QontoStepIcon(props) {
                 [classes.active]: active,
             })}
         >
-            {completed ? <Check className={classes.completed} /> :  <Checkbox checked={props.isChecked} onClick={props.handleChange} />}
+            {completed ? <Check className={classes.completed} /> :  <Checkbox checked={props.isChecked} id={props.id} onClick={props.handleChange} />}
         </div>
     );
 }
@@ -95,29 +99,20 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function getSteps() {
-    return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
-}
-
-function getStepContent(step) {
-    switch(step) {
-        case 0:
-            return 'Select campaign settings...';
-        case 1: 
-            return 'What is an ad group anyways?';
-        case 2:
-            return 'This is the bit I really care about';
-        default:
-            return 'Unknown step';
-    }
-}
-
-
-export default function PathwayStepper() {
+export default function PathwayStepper(props) {
     const classes = useStyles();
     const [activeStep, setActiveStep] = useState(1);
     const [checked, setChecked] = useState(false);
     const steps = getSteps();
+ 
+
+    function getSteps() {
+        return props.pathwayData.map((step) => step.pathwayModule);
+    }
+
+    function getStepContent(step) {
+        return props.pathwayData.map((step) => step.description)[step]
+    }
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1)
@@ -131,20 +126,33 @@ export default function PathwayStepper() {
         setActiveStep(0);
     };
 
-    const handleChange = () => {
+    const handleChange = (event) => {
+        console.log(event.target.checked)
         setChecked((prevState) => !prevState);
     };
+
+    const handleClick = (step) => () => {
+        setActiveStep(step)
+    }
 
     return (
         <div className={classes.root}>
             <Stepper nonLinear activeStep={activeStep} connector={<QontoConnector />} orientation='vertical'>
                 {steps.map((label, index) => (
                     <Step key={label}>
-                        <StepLabel StepIconComponent={QontoStepIcon} StepIconProps={{isChecked:checked, handleChange: handleChange}}>
+                        <StepLabel StepIconComponent={QontoStepIcon} StepIconProps={{isChecked:checked, handleChange: handleChange, id: index}} onClick={handleClick(index)}>
                             {label}
                         </StepLabel>
                         <StepContent>
                             <Typography>{getStepContent(index)}</Typography>
+                            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+                                {courses.data.filter((course) => course[3] === label ).slice(0, 3).map((selectedCourse) => (
+                                    <Grid md={3}>
+                                         <PathwayCard title={selectedCourse[5]} image={selectedCourse[0] === 'Udemy' ? Udemy : Coursera} buttonText='Get Started' linkDest='externa' link={selectedCourse[4]} />
+                                    </Grid>
+                                   
+                                ))}
+                            </div>
                             <div className={classes.actionsContainer}>
                                 <div>
                                     <Button
